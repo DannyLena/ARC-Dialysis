@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Contact ARC Dialysis to request information, schedule a dialysis chair, or connect with one of our kidney care locations across South and Central Florida." />
+<meta name="author" content="ARC Dialysis" />
+<title>Contact ARC Dialysis | Request Information &amp; Dialysis Chair</title>
+
+<!-- Favicon -->
+<link href="images/favicon.png" rel="shortcut icon" type="image/png">
+<link href="images/apple-touch-icon.png" rel="icon">
+<link href="images/apple-touch-icon-72x72.png" rel="icon" sizes="72x72">
+<link href="images/apple-touch-icon-114x114.png" rel="icon" sizes="114x114">
+<link href="images/apple-touch-icon-144x144.png" rel="icon" sizes="144x144">
+
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/css-plugin-collections.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="css/arc-location-selector.css?v=3">
+<link rel="stylesheet" href="css/arc-need-help-bar.css?v=3">
+<link rel="stylesheet" href="css/arc-need-help-bar_FIXED.css">
+<script src="js/arc-need-help-bar.v2.js?v=3"></script>
+<link rel="stylesheet" href="css/arc-footer.v2.css?v=1">
+<link rel="stylesheet" href="css/arc-location-widgets.v2.css?v=1">
+<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-boxed.css" rel="stylesheet"/>
+<link href="css/style-main.css" rel="stylesheet" type="text/css">
+<link href="css/preloader.css" rel="stylesheet" type="text/css">
+<link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link href="css/colors/theme-skin-blue.css" rel="stylesheet" type="text/css">
+
+<!-- External JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/jquery-plugin-collection.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+<!-- Google reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LflwY4sAAAAALgG_ScfKZUryqsb-x8vckLn0MkW"></script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-213823725-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-213823725-1');
+</script>
+
+<style type="text/css">
+body, td, th { font-family: Lato, sans-serif; color: #000000; }
+html, body { overflow-x: hidden; max-width: 100%; }
+img { max-width: 100%; height: auto; }
+a:link    { color: #0022F0; text-decoration: none; }
+a:visited { color: #5A0CCE; text-decoration: none; }
+a:hover   { text-decoration: underline; }
+a:active  { color: #0022F0; text-decoration: none; }
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: #fff; color: #000; border: 2px solid #000; z-index: 10000; }
+
+
+
+/* ============================================
+   CONTACT FORM SECTION
+   ============================================ */
+.contact-form-section {
+  padding: 60px 0 70px;
+  background: #f0f4fa;
+}
+.contact-form-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.contact-form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 45px 50px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  border-top: 5px solid #1a2f6e;
+}
+.contact-form-card h2 {
+  color: #1a2f6e;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+.contact-form-card .form-subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 0.97rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+.arc-form .form-group {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.arc-form label {
+  font-weight: 600;
+  color: #1a2f6e;
+  font-size: 0.93rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.arc-form input[type="text"],
+.arc-form input[type="tel"],
+.arc-form select,
+.arc-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #c8d5e8;
+  border-radius: 8px;
+  font-size: 0.97rem;
+  color: #333;
+  font-family: Lato, sans-serif;
+  background: #f8faff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+.arc-form input[type="text"]:focus,
+.arc-form input[type="tel"]:focus,
+.arc-form select:focus,
+.arc-form textarea:focus {
+  border-color: #2874a6;
+  box-shadow: 0 0 0 3px rgba(40,116,166,0.12);
+  outline: none;
+  background: #fff;
+}
+.arc-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a2f6e' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+.arc-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.captcha-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.captcha-group img {
+  border-radius: 6px;
+  border: 1.5px solid #c8d5e8;
+  display: block;
+}
+.arc-form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #1a2f6e 0%, #2874a6 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.arc-form input[type="submit"]:hover {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2f6e 100%);
+  box-shadow: 0 5px 18px rgba(26,47,110,0.3);
+  transform: translateY(-1px);
+}
+.form-divider {
+  border: none;
+  border-top: 1.5px solid #e8eef5;
+  margin: 25px 0;
+}
+@media (max-width: 767px) {
+  .contact-form-card {
+    padding: 30px 22px;
+  }
+}
+
+/* ============================================
+   TRUST BAR
+   ============================================ */
+.trust-bar {
+  background: #1a2f6e;
+  border-bottom: 3px solid #f9e79f;
+  padding: 0;
+  width: 100%;
+}
+.trust-bar-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 16px 28px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.trust-item:last-child { border-right: none; }
+.trust-item i { color: #f9e79f; font-size: 1.2em; flex-shrink: 0; }
+@media (max-width: 768px) {
+  .trust-item { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 14px 20px; justify-content: center; }
+  .trust-item:last-child { border-bottom: none; }
+}
+@media (max-width: 480px) { .trust-item { min-width: 100%; } }
+
+/* ── Quick Links Bar ── */
+.quick-links-bar {
+  background: #eaf2f8;
+  border-bottom: 2px solid #d0daea;
+  padding: 0;
+}
+.quick-links-inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.quick-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 30px;
+  text-decoration: none;
+  color: #1a2f6e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-right: 1px solid #c8d8ea;
+  transition: background 0.25s ease, color 0.25s ease;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+}
+.quick-link-item:last-child { border-right: none; }
+.quick-link-item i { font-size: 1.6em; color: #2874a6; transition: color 0.25s ease; }
+.quick-link-item h4 { margin: 0; font-size: 0.9rem; font-weight: 700; color: inherit; }
+.quick-link-item:hover { background: #1a2f6e; color: #f9e79f; text-decoration: none; }
+.quick-link-item:hover i, .quick-link-item:hover h4 { color: #f9e79f; }
+@media (max-width: 600px) { .quick-link-item { min-width: 50%; border-bottom: 1px solid #c8d8ea; } }
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  padding: 65px 0;
+  background: linear-gradient(135deg, #0099a8 0%, #007a87 100%);
+  text-align: center;
+}
+.cta-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.cta-section p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.05rem;
+  max-width: 660px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cta-btn-white { background: #fff; color: #007a87; border: 2px solid #fff; }
+.cta-btn-white:hover { background: #f0fafa; color: #007a87; text-decoration: none; }
+.cta-btn-outline { background: transparent; color: #fff; border: 2px solid #fff; }
+.cta-btn-outline:hover { background: #fff; color: #007a87; text-decoration: none; }
+
+
+.recaptcha-notice {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+.recaptcha-notice a { color: #2874a6; text-decoration: underline; }
+
+.arc-submit-btn {
+  display: inline-block;
+  background: #1a5276;
+  color: #ffffff;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.3px;
+}
+.arc-submit-btn:hover { background: #2874a6; transform: translateY(-2px); }
+.arc-submit-btn:disabled { background: #7f8c8d; cursor: not-allowed; transform: none; }
+</style>
+<link rel="stylesheet" href="css/arc-updates.css">
+
+<style>
+/* ── Smart popup must sit above the machine overlay (99999) and float pill (100001) ── */
+.arc-smart-popup-backdrop { z-index: 100002 !important; }
+
+/* ── Floating AI Smart Tool — pill, bottom-left ── */
+.arc-float-wrap {
+  position: fixed;
+  bottom: 20px;
+  left: 5px;
+  z-index: 100001;
+}
+.arc-float-pill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #1a2f6e;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 30px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  transition: border-color 0.35s, box-shadow 0.35s, padding 0.35s ease;
+  overflow: hidden;
+}
+.arc-float-pill:hover { box-shadow: 0 6px 26px rgba(0,0,0,0.55); }
+.arc-float-pill.ai-active { border-color: #f9e79f; padding: 8px 16px; }
+.arc-float-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.arc-float-toggle:focus-visible { outline: 2px solid #f9e79f; outline-offset: 3px; border-radius: 4px; }
+.arc-float-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: color 0.25s, max-width 0.35s ease, opacity 0.3s ease, margin 0.35s ease;
+}
+.arc-float-pill.ai-active .arc-float-label { max-width: 120px; opacity: 1; }
+#arcFloatAI { max-width: 80px; opacity: 1; margin-left: 6px; font-size: 11px; font-weight: 900; }
+.arc-float-pill.ai-active #arcFloatAI { max-width: 120px; }
+.arc-float-label.active { color: #ffffff; }
+.arc-float-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 12px;
+  flex-shrink: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.35s ease, opacity 0.3s ease;
+}
+.arc-float-pill.ai-active .arc-float-sep { max-width: 40px; opacity: 1; }
+.arc-float-smart-btn {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.35s ease, opacity 0.3s ease;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.arc-float-pill.ai-active .arc-float-smart-btn { max-width: 200px; opacity: 1; }
+.arc-float-smart-btn:hover { color: #ffffff; }
+.arc-float-switch-track {
+  position: relative;
+  width: 38px;
+  height: 22px;
+  border-radius: 11px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: background 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+}
+.arc-float-toggle[aria-checked="true"] .arc-float-switch-track {
+  background: #f9e79f;
+  border-color: #f9e79f;
+}
+.arc-float-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  transition: transform 0.28s cubic-bezier(0.34,1.4,0.64,1);
+}
+.arc-float-toggle[aria-checked="true"] .arc-float-knob { transform: translateX(16px); }
+
+/* ── Machine view tab bar ── */
+.arc-machine-tabbar {
+  display: flex;
+  gap: 6px;
+  padding: 8px 20px;
+  background: #161b2e;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.arc-machine-tab {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.arc-machine-tab:hover { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+.arc-machine-tab.active { color: #4ecdc4; border-color: #4ecdc4; background: rgba(78,205,196,0.08); }
+.arc-machine-content pre {
+  color: #a8c0d8; font-size: 12px; line-height: 1.6;
+  white-space: pre-wrap; word-break: break-word;
+  background: rgba(255,255,255,0.03); padding: 16px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+</style>
+<style id="arc-nav-css">
+/* ============================================
+   ARC DIALYSIS — DARK NAV OVERRIDE
+   Nav color: #121536 (dark navy)
+   ============================================ */
+.header-nav-wrapper,
+.header-nav-wrapper.navbar-scrolltofixed,
+.header-nav-wrapper.bg-lightest,
+.header-nav,
+.header .header-nav-wrapper {
+    background-color: #121536 !important;
+    background: #121536 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+.menuzord,
+nav.menuzord,
+.menuzord.blue,
+.menuzord.bg-lightest,
+nav.menuzord.blue.bg-lightest {
+    background-color: #121536 !important;
+    background: #121536 !important;
+}
+.menuzord-menu > li > a,
+ul.menuzord-menu > li > a {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+.menuzord-menu > li > a:hover,
+.menuzord-menu > li.active > a,
+.menuzord-menu > li:hover > a {
+    color: #f9e79f !important;
+    background-color: rgba(255,255,255,0.08) !important;
+    text-decoration: none !important;
+}
+.menuzord-menu > li.active > a {
+    border-bottom: 2px solid #f9e79f !important;
+}
+.menuzord-menu .dropdown,
+.menuzord-menu ul.dropdown,
+ul.menuzord-menu li ul.dropdown {
+    background-color: #1a2050 !important;
+    border-top: 2px solid #f9e79f !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+    min-width: 280px !important;
+    padding: 0 !important;
+}
+.menuzord-menu .dropdown li {
+    width: 100% !important;
+    display: block !important;
+}
+.menuzord-menu .dropdown li a,
+ul.menuzord-menu li ul.dropdown li a {
+    color: #e0e4f0 !important;
+    background-color: #1a2050 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 20px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+}
+.menuzord-menu .dropdown li a:hover {
+    color: #f9e79f !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    padding-left: 25px !important;
+    text-decoration: none !important;
+}
+.menuzord-trigger,
+button.menuzord-trigger {
+    background: transparent !important;
+    border: none !important;
+}
+.menuzord-trigger span,
+.menuzord-trigger span::before,
+.menuzord-trigger span::after {
+    background-color: #ffffff !important;
+}
+#menuzord-right.menuzord {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+}
+.menuzord .menuzord-brand {
+    float: none !important;
+    margin-left: 0 !important;
+    flex-shrink: 0;
+    height: auto !important;
+    max-height: none !important;
+}
+.menuzord .menuzord-brand img {
+    width: 300px !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+}
+ul.menuzord-menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    flex: 1;
+    justify-content: flex-end !important;
+}
+ul.menuzord-menu > li {
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+/* Remove all header shadow lines */
+#header, .header, .header-nav, .header-nav-wrapper,
+#menuzord-right, nav.menuzord, .navbar-scrolltofixed, .scroll-to-fixed-fixed {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-bottom: 0 !important;
+    background-image: none !important;
+}
+/* Mobile nav */
+@media (max-width: 991px) {
+    .menuzord-menu,
+    .menuzord-menu.menuzord-indented {
+        background-color: #121536 !important;
+        border-top: 1px solid rgba(255,255,255,0.15) !important;
+    }
+    .menuzord-menu > li > a {
+        color: #ffffff !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .menuzord-menu > li > a:hover { color: #f9e79f !important; }
+    .menuzord-menu .dropdown,
+    ul.menuzord-menu li ul.dropdown {
+        background-color: #0e1228 !important;
+    }
+    .menuzord-menu .dropdown li a { color: #c8d0e8 !important; }
+    .menuzord-menu .dropdown li a:hover { color: #f9e79f !important; }
+    .menuzord .menuzord-brand { margin-left: 0; }
+}
+/* Sticky scroll state */
+.header-nav-wrapper.scrolled,
+.header-nav-wrapper.sticky-active,
+.is-sticky .header-nav-wrapper {
+    background-color: #0c1030 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+/* ============================================
+   ARC NEED HELP TOP BAR
+   ============================================ */
+.need-help-bar {
+  background: #121536;
+  padding: 12px 15px;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+.need-help-bar .help-text {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.help-buttons {
+  display: inline-block;
+  vertical-align: middle;
+}
+.help-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+}
+.help-btn-call { background: #ffffff; color: #1a5276; border: 2px solid #ffffff; }
+.help-btn-call:hover { background: transparent; color: #ffffff; text-decoration: none; }
+.help-btn-text { background: transparent; color: #ffffff; border: 2px solid #ffffff; }
+.help-btn-text:hover { background: #ffffff; color: #1a5276; text-decoration: none; }
+.help-btn i { margin-right: 6px; }
+@media (max-width: 767px) {
+  .help-btn { min-width: auto; padding: 8px 14px; font-size: 13px; }
+  .need-help-bar .help-text { display: block; margin-bottom: 10px; margin-right: 0; }
+}
+
+/* ============================================
+   TRUST BAR
+   ============================================ */
+.trust-bar {
+  background: #1a2f6e;
+  border-bottom: 3px solid #f9e79f;
+  padding: 0;
+  width: 100%;
+}
+.trust-bar-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 16px 28px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.trust-item:last-child {
+  border-right: none;
+}
+.trust-item i {
+  color: #f9e79f;
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .trust-item {
+    min-width: 50%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 14px 20px;
+    justify-content: center;
+  }
+  .trust-item:last-child {
+    border-bottom: none;
+  }
+}
+@media (max-width: 480px) {
+  .trust-item {
+    min-width: 100%;
+  }
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2f6e 50%, #005a68 100%);
+  padding: 70px 20px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at center top, rgba(249,231,159,0.08) 0%, transparent 70%);
+}
+.page-hero h1 {
+  color: #ffffff;
+  font-size: 2.8em;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+.page-hero h2 {
+  color: #f9e79f;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  position: relative;
+}
+.page-hero h3 {
+  color: #82e0aa;
+  font-size: 1.15em;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+  position: relative;
+}
+.page-hero .hero-tagline {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05em;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .page-hero h1 { font-size: 1.9em; }
+  .page-hero h2 { font-size: 1.2em; }
+  .page-hero h3 { font-size: 1em; }
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+.content-section {
+  padding: 55px 0;
+}
+.content-section.bg-lighter {
+  background-color: #eaf2f8;
+}
+.content-section.bg-light-blue {
+  background-color: #d6eaf8;
+}
+.section-title {
+  color: #1a5276;
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.section-title i {
+  color: #0099a8;
+  margin-right: 10px;
+}
+.intro-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   EDUCATION QUICK LINKS GRID
+   ============================================ */
+.education-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto 10px auto;
+}
+.education-item {
+  flex: 1;
+  min-width: 200px;
+  max-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 18px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  border: 2px solid #006FCE;
+  transition: transform 0.3s ease;
+}
+.education-item:hover { transform: translateY(-5px); }
+.education-item i { font-size: 2.2em; color: #2874a6; margin-bottom: 12px; display: block; }
+.education-item h4 { color: #1a5276; font-size: 1em; margin-bottom: 10px; font-weight: 600; }
+.education-item a { color: #2874a6; font-weight: 600; font-size: 0.9em; }
+.education-item a:hover { text-decoration: underline; }
+
+/* ============================================
+   PDF & RESOURCE LISTS
+   ============================================ */
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resource-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.resource-list li:last-child { border-bottom: none; }
+.resource-list a {
+  color: #1a5276;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+.resource-list a:hover { color: #0099a8; text-decoration: none; }
+.pdf-icon { color: #c0392b; margin-right: 8px; font-size: 1.1em; }
+.external-icon { color: #2874a6; margin-right: 8px; font-size: 1em; }
+
+/* ============================================
+   TIPS CARD
+   ============================================ */
+.tips-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.tips-card .highlight {
+  background: #eaf2f8;
+  border-left: 4px solid #0099a8;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+.seasoning-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.seasoning-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 0.97em;
+}
+.seasoning-list li:last-child { border-bottom: none; }
+.seasoning-list a { color: #1a5276; font-weight: 600; }
+.seasoning-list a:hover { color: #0099a8; }
+.seasoning-list i { margin-right: 6px; color: #2874a6; }
+
+/* Nutrition image centering */
+.nutrition-intro-img {
+  text-align: center;
+  padding: 30px 0 15px 0;
+}
+
+/* ============================================
+   ADA FIX: Style <button> dropdown triggers
+   to match the <a> nav links they replaced
+   ============================================ */
+.menuzord-menu > li > button.menuzord-dropdown-trigger,
+ul.menuzord-menu > li > button.menuzord-dropdown-trigger {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  font-size: 13px !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  outline-offset: 2px;
+}
+.menuzord-menu > li > button.menuzord-dropdown-trigger:hover,
+.menuzord-menu > li:hover > button.menuzord-dropdown-trigger {
+  color: #f9e79f !important;
+  background-color: rgba(255,255,255,0.08) !important;
+  text-decoration: none !important;
+}
+.menuzord-menu > li.active > button.menuzord-dropdown-trigger {
+  border-bottom: 2px solid #f9e79f !important;
+  color: #f9e79f !important;
+}
+@media (max-width: 991px) {
+  .menuzord-menu > li > button.menuzord-dropdown-trigger {
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 10px 15px !important;
+  }
+  .menuzord-menu > li > button.menuzord-dropdown-trigger:hover {
+    color: #f9e79f !important;
+  }
+}
+
+/* ADA FIX: Reset <button> for help-bar Call Us button */
+button.help-btn {
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ADA FIX: Visible focus indicators for all interactive elements
+   Bootstrap 3 suppresses outline on focus — override for WCAG 2.4.7 */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid #0022F0 !important;
+  outline-offset: 2px !important;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://arcdialysis.com/ARC-Dialysis-Contact-Us.html#medicalbusiness",
+  "name": "ARC Dialysis – Contact Us",
+  "description": "Contact ARC Dialysis to request information, schedule a dialysis chair, or connect with one of our kidney care locations across South and Central Florida.",
+  "url": "https://arcdialysis.com/ARC-Dialysis-Contact-Us.html",
+  "telephone": "+1-305-448-6261",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4960 SW 72nd Ave, Suite 208",
+    "addressLocality": "Miami",
+    "addressRegion": "FL",
+    "postalCode": "33155",
+    "addressCountry": "US"
+  },
+  "medicalSpecialty": "Nephrology",
+  "logo": "https://arcdialysis.com/images/ARC-Dialysis-Kidney-Care-logo-01.png"
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" aria-label="Skip to main content">Skip to main content</a>
+<div id="wrapper" class="clearfix">
+
+<!-- ARC NEED HELP TOP BAR -->
+<div class="need-help-bar" role="region" aria-label="Need help">
+  <div class="help-content">
+    <span class="help-text"><i class="fas fa-heartbeat" aria-hidden="true"></i> Talk to a kidney care navigator.</span>
+    <div class="help-buttons" aria-label="Contact options">
+      <a href="#" id="openLocationPopup"
+         class="help-btn help-btn-call"
+         aria-label="Call ARC Dialysis – choose your location"
+         aria-haspopup="dialog"
+         aria-controls="locationPopup">
+        <i class="fas fa-phone" aria-hidden="true"></i> Call Us
+      </a>
+      <a href="sms:9544488482&body=Hi%20ARC%20Dialysis!%20I'd%20like%20to%20connect%20with%20the%20following%20location:%20%5BLOCATION%20NAME%20HERE%5D%0A%0AMy%20name%20is:%20%5BYOUR%20NAME%5D%0A%0AMessage:%20%5BYOUR%20QUESTION%20OR%20NEED%5D"
+         class="help-btn help-btn-text"
+         aria-label="Text ARC Dialysis">
+        <i class="fas fa-comment" aria-hidden="true"></i> Text Us
+      </a>
+    </div>
+    <div class="translate-wrapper" aria-label="Translate this page">
+      <div id="google_translate_element"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION SELECTOR POPUP -->
+<div id="locationPopup" class="location-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="locationPopupTitle" aria-hidden="true">
+  <div class="location-popup">
+    <div class="location-popup-header">
+      <h3 id="locationPopupTitle">Select Your ARC Dialysis Location</h3>
+      <button class="location-popup-close" id="closePopup" aria-label="Close location selector">&times;</button>
+    </div>
+    <div class="location-popup-content">
+      <ul class="location-list">
+        <li class="location-item">
+          <a href="tel:9544488482" class="location-link">
+            <span class="location-name">ARC Dialysis – Main Office</span>
+            <span class="location-phone">(954) 448-8482</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:3054486261" class="location-link">
+            <span class="location-name">ARC Dialysis – Americare Renal Center</span>
+            <span class="location-phone">(305) 448-6261</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:3055453070" class="location-link">
+            <span class="location-name">Apollo Renal Center Miami</span>
+            <span class="location-phone">(305) 545-3070</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:3522801880" class="location-link">
+            <span class="location-name">ARC Dialysis Dunnellon</span>
+            <span class="location-phone">(352) 280-1880</span>
+            <span class="location-city">Dunnellon, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7573375333" class="location-link">
+            <span class="location-name">ARC Dialysis Fort Lauderdale</span>
+            <span class="location-phone">(757) 337-5333</span>
+            <span class="location-city">Ft. Lauderdale, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:8632926089" class="location-link">
+            <span class="location-name">Winter Haven Kidney Center</span>
+            <span class="location-phone">(863) 292-6089</span>
+            <span class="location-city">Winter Haven, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7865024976" class="location-link">
+            <span class="location-name">ARC Dialysis Hialeah</span>
+            <span class="location-phone">(786) 502-4976</span>
+            <span class="location-city">Hialeah, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7863912160" class="location-link">
+            <span class="location-name">ARC Dialysis Kendall LLC</span>
+            <span class="location-phone">(786) 391-2160</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7866612178" class="location-link">
+            <span class="location-name">ARC Dialysis Miami Lakes</span>
+            <span class="location-phone">(786) 661-2178</span>
+            <span class="location-city">Miami Gardens, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7863911733" class="location-link">
+            <span class="location-name">ARC Dialysis North Dade</span>
+            <span class="location-phone">(786) 391-1733</span>
+            <span class="location-city">Opa Locka, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7864092008" class="location-link">
+            <span class="location-name">ARC Dialysis North Shore</span>
+            <span class="location-phone">(786) 409-2008</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7865043003" class="location-link">
+            <span class="location-name">ARC Dialysis Perrine LLC</span>
+            <span class="location-phone">(786) 504-3003</span>
+            <span class="location-city">Miami, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:7864579480" class="location-link">
+            <span class="location-name">ARC Dialysis Pompano Beach</span>
+            <span class="location-phone">(786) 457-9480</span>
+            <span class="location-city">Lighthouse Point, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:8633397030" class="location-link">
+            <span class="location-name">Kidney Care Center of LaBelle</span>
+            <span class="location-phone">(863) 339-7030</span>
+            <span class="location-city">LaBelle, FL</span>
+          </a>
+        </li>
+        <li class="location-item">
+          <a href="tel:2393887770" class="location-link">
+            <span class="location-name">The Kidney Institute of Bonita Springs</span>
+            <span class="location-phone">(239) 388-7770</span>
+            <span class="location-city">Bonita Springs, FL</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Popup JS — inline fallback ensures popup works regardless of external JS load order -->
+<script>
+(function () {
+  function initPopup() {
+    var openBtn = document.getElementById('openLocationPopup');
+    var closeBtn = document.getElementById('closePopup');
+    var popup   = document.getElementById('locationPopup');
+    if (!openBtn || !popup) return;
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        popup.classList.remove('active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        openBtn.focus();
+      });
+    }
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        openBtn.focus();
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'Escape' || e.key === 'Esc') && popup.classList.contains('active')) {
+        popup.classList.remove('active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        openBtn.focus();
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPopup);
+  } else {
+    initPopup();
+  }
+})();
+</script>
+
+<!-- DARK HEADER & NAVIGATION -->
+<header id="header" class="header">
+  <div class="header-nav">
+    <div class="header-nav-wrapper navbar-scrolltofixed" style="background-color:#121536;">
+      <div class="container-fluid" style="padding-left:25px;padding-right:25px;">
+        <nav id="menuzord-right" class="menuzord blue" aria-label="Main navigation" style="background-color:#121536;">
+          <div class="brand-with-social">
+            <a class="menuzord-brand pull-left flip" href="index.html" aria-label="ARC Dialysis home">
+              <img src="images/ARC-Dialysis-Kidney-Care-logo-01.png"
+                   alt="ARC Dialysis – 100% minority owned dialysis provider specializing in acute, outpatient and in-home therapies">
+            </a>
+          </div>
+          <button class="menuzord-trigger" aria-label="Open main menu" aria-controls="menuzord-right" aria-expanded="false"><span></span></button>
+          <ul class="menuzord-menu">
+            <li><a href="https://arcdialysis.com/index.html">HOME</a></li>
+            <li>
+              <button type="button" class="menuzord-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="About Us submenu">About Us</button>
+              <ul class="dropdown">
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-About-Us.html">About ARC Dialysis</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Medical-Team-and-Strategic-Partners.html">Medical Team &amp; Strategic Partners</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Patient-Form.html">Patient Form</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Employment-Opportunities.html">Employment Opportunities</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis_Dialysis-Partnerships-Management-Services.html">Partnership Opportunities</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Kidney-Care-Spotlight-Dunnellon-Florida.html">Spotlight Location</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="menuzord-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Patient Care submenu">Patient Care</button>
+              <ul class="dropdown">
+                <li><a href="https://arcdialysis.com/ARC-Kidney-Care-and-Dialysis-Services.html">Patient Services</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Treatments-and-Modalities.html">Treatments &amp; Modalities</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Home-Dialysis-Care.html">Home Dialysis Care</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Acute-Kidney-Patient-Care.html">Acute Kidney Patient Care</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Nursing-Home-Integration.html">Nursing Home Integration</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Hospital-System-Care.html">Hospital System Care</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="menuzord-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Education and Resources submenu">Education &amp; Resources</button>
+              <ul class="dropdown">
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Education.html">Nutritional Education</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Blog.html">Blog</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Kidney-Care-Medical-News.html">Kidney Care Medical News</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="menuzord-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Locations submenu">Locations</button>
+              <ul class="dropdown">
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Locations.html">Locations</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Americare-Renal-Center-Miami-Florida.html">Americare Renal Center – Miami</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Apollo-Renal-Center-Miami-Florida.html">Apollo Renal Center – Miami</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Kidney-Care-Dunnellon-Florida.html">ARC Dialysis Kidney Care – Dunnellon</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-Winter-Haven-Kidney-Center-Florida.html">Winter Haven Kidney Center</a></li>
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-ARC_Dialysis-Main-Office-Miami-Florida.html" aria-label="ARC Dialysis Main Office page">ARC Dialysis Main Office</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="menuzord-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="News and Events submenu">News &amp; Events</button>
+              <ul class="dropdown">
+                <li><a href="https://arcdialysis.com/ARC-Dialysis-News-and-Events.html">News &amp; Events</a></li>
+                <li><a href="https://www.facebook.com/KidneyCareARC" target="_blank" aria-label="Facebook (opens in new window)">Facebook<span class="sr-only"> (opens in new window)</span></a></li>
+                <li><a href="https://www.youtube.com/channel/UC1iRaeamJIZ4NGKBwRpufCA/videos" target="_blank" aria-label="YouTube (opens in new window)">YouTube<span class="sr-only"> (opens in new window)</span></a></li>
+                <li><a href="https://www.linkedin.com/company/arc-dialysis/" target="_blank" aria-label="LinkedIn (opens in new window)">LinkedIn<span class="sr-only"> (opens in new window)</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main-content" id="main-content">
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" role="region" aria-label="ARC Dialysis credentials">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <i class="fas fa-certificate" aria-hidden="true"></i> Accredited Dialysis Provider
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-users" aria-hidden="true"></i> 100% Minority-Owned
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 12+ Florida Locations
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-heart" aria-hidden="true"></i> Compassionate Kidney Care
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK LINKS BAR -->
+  <section class="quick-links-bar" aria-label="Quick links">
+    <div class="quick-links-inner">
+      <a href="https://arcdialysis.com/ARC-Dialysis-Locations.html" class="quick-link-item">
+        <i class="fa fa-map-pin" aria-hidden="true"></i>
+        <h3 class="h4">Find A Center</h3>
+      </a>
+      <a href="https://arcdialysis.com/ARC-Dialysis-About-Us.html" class="quick-link-item">
+        <i class="fa fa-group" aria-hidden="true"></i>
+        <h3 class="h4">Meet Our Team</h3>
+      </a>
+      <a href="https://arcdialysis.com/ARC-Dialysis-Education.html" class="quick-link-item" aria-label="Learn more about dialysis education resources">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        <h3 class="h4">Learn More</h3>
+      </a>
+      <a href="https://arcdialysis.com/ARC-Dialysis-Patient-Form.html" class="quick-link-item">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <h3 class="h4">Patient Form</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact-form-section" id="contact-form" aria-labelledby="contact-form-heading">
+    <div class="contact-form-wrapper">
+      <div class="contact-form-card">
+
+        <h1 id="contact-form-heading">Contact Us</h1>
+        <p class="form-subtitle">Fill out the form below and a member of our team will be in touch with you shortly.</p>
+
+        <hr class="form-divider">
+
+        <form id="quick_contact_form" name="quick_contact_form" action="includes/quickcontact.php" method="post" class="arc-form" novalidate>
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="form_name" required placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="form_phone" required placeholder="(000) 000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="form_email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="location">Select a Location:</label>
+            <select id="location" name="form_location" required>
+              <option value="">Click here to select a Location</option>
+              <option value="Main Office">Main Office 4960 SW 72nd Ave #208 Miami, FL 33155-5549</option>
+              <option value="Kidney Institute of Bonita Springs">The Kidney Institute of Bonita Springs 26381 S. Tamiami Trail #122 Bonita Springs, Florida 34134</option>
+              <option value="Ameri-care Renal Center">Ameri-care Renal Center 2601 SW 37th Ave Suite 138 Miami, FL 33133-2750</option>
+              <option value="Apollo Renal Center Miami">Apollo Renal Center Miami 955 NW 3rd Street Suite 110 Miami, FL 33128-1281</option>
+              <option value="ARC Dialysis Perrine LLC">ARC Dialysis Perrine LLC 22165 South Dixie Hwy Miami, FL 33170-2840</option>
+              <option value="ARC Dialysis Kendall LLC">ARC Dialysis Kendall LLC 9835 Sunset Drive #107 Miami, FL 33173-4648</option>
+              <option value="Kidney Care Center of LaBelle">Kidney Care Center of LaBelle 50 N. Bridge St. Labelle, FL 33935</option>
+              <option value="ARC Dialysis North Dade">ARC Dialysis North Dade 1986 Opa Locka Blvd Opa Locka, FL 33054-4226</option>
+              <option value="ARC Dialysis Hialeah">ARC Dialysis Hialeah 3704 W 12th Ave. Hialeah, FL 33012-4126</option>
+              <option value="ARC Dialysis Miami Lakes">ARC Dialysis Miami Lakes 5600 NW 167th Street Miami Gardens, FL 33014</option>
+              <option value="Winter Haven Kidney Center">Winter Haven Kidney Center 1107 3rd St. SW Suite 9 Winter Haven, FL 33880</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ins-info">Request a Dialysis Chair and Time:</label>
+            <textarea id="ins-info" name="form_chiar_and_time" rows="4" required aria-label="Insurance information and time" placeholder="Please describe your preferred schedule or any special requirements..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="questions_and_comments">Questions and comments:</label>
+            <textarea id="questions_and_comments" name="form_questions_and_comments" rows="4" required placeholder="Type your message here..."></textarea>
+          </div>
+
+          <hr class="form-divider">
+
+          <!-- reCAPTCHA v3 token (invisible, populated by JavaScript before submit) -->
+          <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+          <p class="recaptcha-notice">
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy<span class="sr-only"> (opens in new window)</span></a> and
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service<span class="sr-only"> (opens in new window)</span></a> apply.
+          </p>
+
+          <div class="form-group" style="margin-top: 10px;">
+            <button type="submit" name="submit" class="arc-submit-btn" data-loading-text="Sending...">Submit</button>
+          </div>
+
+        </form>
+
+        <!-- Quick Contact Form Validation -->
+        <script>
+        (function($) {
+          // Safety check: if jQuery Validate isn't loaded, restore browser validation
+          if (typeof $.fn.validate === 'undefined') {
+            var f = document.getElementById('quick_contact_form');
+            if (f) { f.removeAttribute('novalidate'); }
+            console.warn('ARC Forms: jQuery Validate not loaded. Browser validation active.');
+            return;
+          }
+
+          $("#quick_contact_form").validate({
+            rules: {
+              form_name: { required: true, minlength: 2 },
+              form_phone: { required: true },
+              form_email: { required: true, email: true },
+              form_location: { required: true },
+              form_chiar_and_time: { required: true },
+              form_questions_and_comments: { required: true }
+            },
+            messages: {
+              form_name: "Please enter your name.",
+              form_phone: "Please enter your phone number.",
+              form_email: "Please enter a valid email address.",
+              form_location: "Please select a location.",
+              form_chiar_and_time: "Please describe your preferred schedule.",
+              form_questions_and_comments: "Please enter your message."
+            },
+            submitHandler: function(form) {
+              var form_btn = $(form).find('button[type="submit"]');
+              var form_result_div = '#form-result';
+              $(form_result_div).remove();
+              form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display:none;"></div>');
+              var form_btn_old_html = form_btn.html();
+              form_btn.prop('disabled', true).html(form_btn.data('loading-text') || '<i class="fa fa-spinner fa-spin"></i> Sending...');
+
+              grecaptcha.ready(function() {
+                grecaptcha.execute('6LflwY4sAAAAALgG_ScfKZUryqsb-x8vckLn0MkW', { action: 'contact_form' }).then(function(token) {
+                  $('#recaptcha_token').val(token);
+                  $(form).ajaxSubmit({
+                    dataType: 'json',
+                    success: function(data) {
+                      if (data.status === 'true') {
+                        $(form).find('input[type="text"], input[type="tel"], input[type="email"], textarea, select').val('');
+                        $('#recaptcha_token').val('');
+                      }
+                      form_btn.prop('disabled', false).html(form_btn_old_html);
+                      $(form_result_div).html(data.message).fadeIn('slow');
+                      setTimeout(function() { $(form_result_div).fadeOut('slow'); }, 6000);
+                    },
+                    error: function() {
+                      form_btn.prop('disabled', false).html(form_btn_old_html);
+                      $(form_result_div).html('<strong>Connection error.</strong> Please try again or call us directly.').fadeIn('slow');
+                    }
+                  });
+                });
+              });
+            }
+          });
+        })(jQuery);
+        </script>
+
+      </div><!-- end contact-form-card -->
+    </div><!-- end contact-form-wrapper -->
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading">Prefer to Reach Us Directly?</h2>
+      <p>Our kidney care navigators are ready to answer your questions and help you find the right dialysis solution.</p>
+      <div class="cta-btns">
+        <a href="#" class="cta-btn cta-btn-white" onclick="document.getElementById('openLocationPopup').click(); return false;" aria-label="Call a location">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call a Location
+        </a>
+        <a href="sms:9544488482&body=Hi%20ARC%20Dialysis!%20I'd%20like%20to%20connect%20with%20the%20following%20location:%20%5BLOCATION%20NAME%20HERE%5D%0A%0AMy%20name%20is:%20%5BYOUR%20NAME%5D%0A%0AMessage:%20%5BYOUR%20QUESTION%20OR%20NEED%5D"
+           class="cta-btn cta-btn-outline"
+           aria-label="Text ARC Dialysis">
+          <i class="fas fa-comment" aria-hidden="true"></i> Text Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer" class="footer pb-0" style="background-color: #0099a8;">
+  <div class="container pt-90 pb-60">
+    <div class="row">
+
+      <!-- Column 1: Corporate Office -->
+      <div class="col-sm-6 col-md-3">
+        <div class="widget dark">
+          <h3 class="widget-title line-bottom-theme-colored-2 mt-20" style="color:#FFFFFF;">Corporate Office</h3>
+          <address style="color:#FFFFFF; text-align:left;">
+            <strong>4960 Southwest 72nd Avenue,<br>Suite 208<br>Miami, Florida 33155</strong><br>
+            <strong>Phone:</strong> <a href="tel:3054486261" style="color:#FFFFFF;">(305) 448-6261</a><br>
+            <strong>Fax:</strong> (305) 448-6268
+          </address>
+          <h4 class="widget-title line-bottom-theme-colored-2 mt-20" style="color:#FFFFFF;">Contact Us</h4>
+          <ul class="list-unstyled" style="font-size:13px; color:#FFFFFF;">
+            <li style="margin-bottom:8px;"><i class="fa fa-phone" style="width:20px;" aria-hidden="true"></i> <a href="tel:3054486261" style="color:#FFFFFF;">(305) 448-6261</a></li>
+            <li style="margin-bottom:8px;"><i class="fa fa-envelope" style="width:20px;" aria-hidden="true"></i> <a href="mailto:info@arcdialysis.com" style="color:#FFFFFF;">info@arcdialysis.com</a></li>
+            <li style="margin-bottom:8px;"><i class="fa fa-globe" style="width:20px;" aria-hidden="true"></i> <a href="https://arcdialysis.com" style="color:#FFFFFF;">www.arcdialysis.com</a></li>
+          </ul>
+          <div style="margin-top:20px;">
+            <a href="https://arcdialysis.com/ARC-Dialysis-Contact-Us.html" class="btn btn-default btn-sm" style="background:#ffffff; color:#1a5276;">Request Information</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Social Media + ARC Dialysis Pages -->
+      <div class="col-sm-6 col-md-3">
+        <div class="widget dark">
+          <h5 class="widget-title line-bottom-theme-colored-2" style="color:#FFFFFF;">Social Media</h5>
+          <ul class="styled-icons icon-dark icon-theme-colored icon-circled icon-sm">
+            <li><a href="https://www.facebook.com/KidneyCareARC" aria-label="ARC Dialysis on Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC1iRaeamJIZ4NGKBwRpufCA/videos" aria-label="ARC Dialysis on YouTube"><i class="fa fa-youtube-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/arc-dialysis/" aria-label="ARC Dialysis on LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
+          </ul>
+        </div>
+        <div class="widget dark mt-30">
+          <h5 class="widget-title line-bottom-theme-colored-2" style="color:#FFFFFF;">ARC Dialysis Pages</h5>
+          <div class="latest-posts">
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/index.html" style="color:#FFFFFF;">HOME</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-About-Us.html" style="color:#FFFFFF;">About Us</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Services.html" style="color:#FFFFFF;">Services</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Treatments-and-Modalities.html" style="color:#FFFFFF;">Treatments/Modalities</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Locations.html" style="color:#FFFFFF;">Locations</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Education.html" style="color:#FFFFFF;">Education</a></h5></div></article>
+            <article class="post media-post clearfix pb-0 mb-10"><div class="post-right"><h5 class="post-title mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-News-and-Events.html" style="color:#FFFFFF;">News &amp; Events</a></h5></div></article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columns 3 & 4: ARC Dialysis Locations -->
+      <div class="col-sm-12 col-md-6">
+        <div class="widget dark">
+          <h5 class="widget-title line-bottom-theme-colored-2 text-center" style="color:#FFFFFF;">ARC Dialysis Locations</h5>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-ARC-Dialysis-Main-Office-Miami-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Main Office</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=4960+SW+72nd+Ave+%23208+Miami+FL+33155" target="_blank" style="color:#FFFFFF;">4960 SW 72nd Ave #208<br>Miami, FL 33155<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:3054486261" style="color:#FFFFFF;">Phone: (305) 448-6261 (opt 2)</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Kidney-Institute-Bonita-Springs-Florida.html" style="color:#FFFFFF;"><strong>The Kidney Institute of Bonita Springs</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=26381+S+Tamiami+Trail+%23122+Bonita+Springs+FL+34134" target="_blank" style="color:#FFFFFF;">26381 S. Tamiami Trail #122<br>Bonita Springs, FL 34134<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:2393887770" style="color:#FFFFFF;">Phone: (239) 388-7770</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Americare-Renal-Center-Miami-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis – Americare Renal Center</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=2601+SW+37th+Ave+Suite+138+Miami+FL+33133" target="_blank" style="color:#FFFFFF;">2601 SW 37th Ave Suite 138<br>Miami, FL 33133<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:3054486261" style="color:#FFFFFF;">Phone: (305) 448-6261</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Apollo-Renal-Center-Miami-Florida.html" style="color:#FFFFFF;"><strong>Apollo Renal Center Miami</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=955+NW+3rd+Street+Suite+110+Miami+FL+33128" target="_blank" style="color:#FFFFFF;">955 NW 3rd Street Suite 110<br>Miami, FL 33128<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:3055453070" style="color:#FFFFFF;">Phone: (305) 545-3070</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Perrine-LLC-Miami-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Perrine LLC</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=22165+South+Dixie+Hwy+Miami+FL+33170" target="_blank" style="color:#FFFFFF;">22165 South Dixie Hwy<br>Miami, FL 33170<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7865043003" style="color:#FFFFFF;">Phone: (786) 504-3003</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Winter-Haven-Kidney-Center-Florida.html" style="color:#FFFFFF;"><strong>Winter Haven Kidney Center</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=1107+3rd+St+SW+Suite+9+Winter+Haven+FL+33880" target="_blank" style="color:#FFFFFF;">1107 3rd St. SW Suite 9<br>Winter Haven, FL 33880<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:8632926089" style="color:#FFFFFF;">Phone: (863) 292-6089</a>
+                </address>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Kendall-LLC-Miami-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Kendall LLC</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=9835+Sunset+Drive+%23107+Miami+FL+33173" target="_blank" style="color:#FFFFFF;">9835 Sunset Drive #107<br>Miami, FL 33173<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7863912160" style="color:#FFFFFF;">Phone: (786) 391-2160</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Kidney-Care-Center-LaBelle-Florida.html" style="color:#FFFFFF;"><strong>Kidney Care Center of LaBelle</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=50+N+Bridge+Street+Suite+200+Labelle+FL+33935" target="_blank" style="color:#FFFFFF;">50 N Bridge Street, Suite 200<br>LaBelle, FL 33935<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:8633397030" style="color:#FFFFFF;">Phone: (863) 339-7030</a>
+                </address>
+              </div>
+              
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Locations.html" style="color:#FFFFFF;"><strong>ARC Dialysis Fort Lauderdale</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=3045+North+Federal+Hwy+Ft.+Lauderdale+FL+33306" target="_blank" style="color:#FFFFFF;" aria-label="3045 North Federal Hwy, Ft. Lauderdale FL (opens in new window)">3045 North Federal Hwy<br>Ft. Lauderdale, FL 33306<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7573375333" style="color:#FFFFFF;">Phone: (757) 337-5333</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Hialeah-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Hialeah</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=3704+W+12th+Ave+Hialeah+FL+33012" target="_blank" style="color:#FFFFFF;">3704 W 12th Ave<br>Hialeah, FL 33012<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7865024976" style="color:#FFFFFF;">Phone: (786) 502-4976</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Miami-Lakes-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Miami Lakes</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=5600+NW+167th+Street+Miami+Gardens+FL+33014" target="_blank" style="color:#FFFFFF;">5600 NW 167th Street<br>Miami Gardens, FL 33014<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7866612178" style="color:#FFFFFF;">Phone: (786) 661-2178</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-North-Dade-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis North Dade</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=1986+Opa+Locka+Blvd+Opa+Locka+FL+33054" target="_blank" style="color:#FFFFFF;">1986 Opa Locka Blvd<br>Opa Locka, FL 33054<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7863911733" style="color:#FFFFFF;">Phone: (786) 391-1733</a>
+                </address>
+              </div>
+
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Locations.html" style="color:#FFFFFF;"><strong>ARC Dialysis North Shore</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=1523+NW+79+Street+Miami+FL+33147" target="_blank" style="color:#FFFFFF;" aria-label="1523 NW 79 Street, Miami FL (opens in new window)">1523 NW 79 Street<br>Miami, FL 33147<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7864092008" style="color:#FFFFFF;">Phone: (786) 409-2008</a>
+                </address>
+              </div>
+              <div class="location-item mb-15">
+                <h6 class="mt-0 mb-5"><a href="https://arcdialysis.com/ARC-Dialysis-Pompano-Beach_Lighthouse-Point-Florida.html" style="color:#FFFFFF;"><strong>ARC Dialysis Pompano Beach</strong></a></h6>
+                <address style="color:#FFFFFF; font-size:12px; margin-bottom:5px;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=3116+N+Federal+Hwy+Lighthouse+Point+FL+33064" target="_blank" style="color:#FFFFFF;">3116 N Federal Hwy<br>Lighthouse Point, FL 33064<span class="sr-only"> (opens in new window)</span></a><br>
+                  <a href="tel:7864579480" style="color:#FFFFFF;">Phone: (786) 457-9480</a>
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="horizontal-contact-widget mt-30 pt-30 text-center"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid p-20" style="background-color:#007a87;">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <p class="text-white font-11 m-0">Copyright &copy;2026 ARC Dialysis All Rights Reserved<br><br>
+        ARC Dialysis removing barriers for people with disabilities. WCAG | ADA Compliant<br><br>
+        Website and AI assistant by 360.ai eMarketing | <a href="https://360eMarketingSEO.com" target="_blank" style="color:#f9e79f;">360eMarketingSEO.com<span class="sr-only"> (opens in new window)</span></a></p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<a class="scrollToTop" href="#" aria-label="Scroll to top"><i class="fa fa-angle-up"></i></a>
+
+<div id="deployment-e49c5ba1-6827-48ee-9a49-b6e6adefebbb"></div>
+<script defer src="https://studio.pickaxe.co/api/embed/bundle.js"></script>
+
+</div><!-- end wrapper -->
+
+<!-- Footer Scripts -->
+<script src="js/custom.js"></script>
+
+
+<!-- AI SEARCH SMART WEBSITE POPUP -->
+<div class="arc-smart-popup-backdrop" id="arcSmartPopup" role="dialog" aria-modal="true" aria-labelledby="arcSmartPopupTitle">
+  <div class="arc-smart-popup">
+    <button class="arc-smart-popup-close" id="arcSmartPopupClose" aria-label="Close">&#x2715;</button>
+    <span class="arc-smart-popup-icon">&#x26A1;</span>
+    <h4 id="arcSmartPopupTitle">What is a SMART Website</h4>
+    <p>ARC Dialysis is an AI Search SMART Website &mdash; our content is structured so AI assistants like <a class="arc-popup-ai-link" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT<span class="sr-only"> (opens in new window)</span></a>, <a class="arc-popup-ai-link" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Google Gemini<span class="sr-only"> (opens in new window)</span></a>, <a class="arc-popup-ai-link" href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity<span class="sr-only"> (opens in new window)</span></a>, <a class="arc-popup-ai-link" href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">MS Copilot<span class="sr-only"> (opens in new window)</span></a>, and <a class="arc-popup-ai-link" href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude<span class="sr-only"> (opens in new window)</span></a>, or others can accurately answer questions about our kidney care services, locations, and team.</p>
+    <p>As more people use AI assistants to find healthcare providers, a SMART Website ensures ARC Dialysis appears with the right information &mdash; not guesses, not outdated data, not a competitor&rsquo;s name.</p>
+    <p>This is part of ARC&rsquo;s commitment to being accessible, transparent, and connected to the tools patients and families actually use today.</p>
+    <div class="arc-smart-badge">
+      <p class="arc-smart-badge-title">AI Readiness Check</p>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> llms.txt &mdash; machine-readable content index</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> Schema.org &mdash; structured data markup</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> Sitemap &mdash; page discovery index</div>
+    </div>
+    <div class="arc-ada-badge">
+      <p class="arc-ada-badge-title">&#x267F; ADA &amp; WCAG 2.1 Compliant</p>
+      <p class="arc-ada-text">Many ARC Dialysis patients live with serious co-morbidities &mdash; diabetes, cardiovascular disease, and other conditions that can affect vision, mobility, and cognition. For our patients, equal digital access is not a feature; it is a fundamental right and a core commitment of our organization.</p>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> Screen reader compatible &mdash; full ARIA landmark and role markup</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> Fully keyboard navigable &mdash; no mouse required</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> WCAG 2.1 AA color contrast on all text</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> Focus management, skip links &amp; semantic structure</div>
+      <div class="arc-smart-check-item"><span class="arc-check-icon">&#x2713;</span> ADA Title III &mdash; equal access for people with disabilities</div>
+    </div>
+  </div>
+</div>
+
+<!-- MACHINE VIEW OVERLAY -->
+<div class="arc-machine-overlay" id="arcMachineOverlay" aria-hidden="true" role="dialog" aria-label="Machine view — AI data layers">
+  <div class="arc-machine-inner">
+    <div class="arc-machine-topbar">
+      <div class="arc-machine-topbar-left">
+        <span class="arc-machine-dot red"></span>
+        <span class="arc-machine-dot yellow"></span>
+        <span class="arc-machine-dot green"></span>
+        <span class="arc-machine-file" id="arcMachineFileLabel">arcdialysis.com/llms.txt</span>
+      </div>
+      <button class="arc-machine-close" id="arcMachineClose" aria-label="Return to human view">&larr; Human View</button>
+    </div>
+    <div class="arc-machine-tabbar" role="tablist" aria-label="AI data source tabs">
+      <button class="arc-machine-tab active" data-tab="llms" role="tab" aria-selected="true">llms.txt</button>
+      <button class="arc-machine-tab" data-tab="schema" role="tab" aria-selected="false">schema.org</button>
+      <button class="arc-machine-tab" data-tab="sitemap" role="tab" aria-selected="false">sitemap</button>
+    </div>
+    <div class="arc-machine-content" id="arcMachineContent">
+      <div class="arc-machine-loading">Loading llms.txt&hellip;</div>
+    </div>
+  </div>
+</div>
+<style>
+/* ── Machine overlay + popup (self-contained) ── */
+.arc-smart-popup { background:#121536; border:2px solid #ffffff; border-radius:12px; padding:28px 28px 24px; max-width:760px; width:calc(100% - 40px); position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.5); transform:translateY(10px) scale(0.97); transition:transform .25s cubic-bezier(.34,1.4,.64,1); max-height:90vh; overflow-y:auto; }
+.arc-smart-popup-backdrop.active .arc-smart-popup { transform:translateY(0) scale(1); }
+.arc-smart-popup::-webkit-scrollbar { width:4px; } .arc-smart-popup::-webkit-scrollbar-thumb { background:rgba(78,205,196,0.3); border-radius:3px; }
+.arc-smart-popup-close { position:absolute; top:12px; right:14px; background:none; border:none; color:rgba(255,255,255,0.45); font-size:18px; line-height:1; cursor:pointer; padding:4px 6px; border-radius:4px; transition:color .2s,background .2s; font-family:inherit; }
+.arc-smart-popup-close:hover { color:#fff; background:rgba(255,255,255,0.08); }
+.arc-smart-popup-icon { font-size:22px; margin-bottom:10px; display:block; }
+.arc-smart-popup h4 { color:#ffffff; font-size:17px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 14px; }
+.arc-smart-popup p { color:rgba(255,255,255,0.75); font-size:16.5px; line-height:1.7; margin:0 0 10px; }
+.arc-popup-ai-link { color:#39ff14 !important; font-weight:700; text-decoration:none; } .arc-popup-ai-link:hover { text-decoration:underline; color:#ffffff; }
+.arc-smart-badge { background:rgba(78,205,196,0.06); border:1px solid rgba(78,205,196,0.2); border-radius:8px; padding:12px 14px; margin-top:8px; }
+.arc-smart-badge-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#4ecdc4; margin:0 0 8px; }
+.arc-smart-check-item { font-size:11.5px; color:rgba(255,255,255,0.7); margin-bottom:5px; display:flex; align-items:center; gap:7px; }
+.arc-smart-check-item:last-child { margin-bottom:0; }
+.arc-check-icon { color:#4ecdc4; font-weight:700; font-size:13px; flex-shrink:0; }
+.arc-ada-badge { background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.25); border-radius:8px; padding:12px 14px; margin-top:10px; }
+.arc-ada-badge-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#a78bfa; margin:0 0 8px; }
+.arc-ada-text { font-size:11.5px; color:rgba(255,255,255,0.65); line-height:1.65; margin:0 0 10px; }
+.arc-ada-badge .arc-check-icon { color:#a78bfa; }
+.arc-machine-overlay { position:fixed; inset:0; background:#0b0f1a; z-index:99999; display:flex; flex-direction:column; opacity:0; pointer-events:none; transform:translateY(12px); transition:opacity .3s ease,transform .3s ease; font-family:'Courier New',Courier,monospace; }
+.arc-machine-overlay.active { opacity:1; pointer-events:all; transform:translateY(0); }
+.arc-machine-inner { display:flex; flex-direction:column; height:100%; overflow:hidden; }
+.arc-machine-topbar { display:flex; align-items:center; justify-content:space-between; background:#161b2e; border-bottom:1px solid rgba(255,255,255,0.1); padding:10px 20px; flex-shrink:0; }
+.arc-machine-topbar-left { display:flex; align-items:center; gap:8px; }
+.arc-machine-dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+.arc-machine-dot.red { background:#ff5f57; } .arc-machine-dot.yellow { background:#febc2e; } .arc-machine-dot.green { background:#28c840; }
+.arc-machine-file { font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:.05em; margin-left:8px; }
+.arc-machine-close { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#4ecdc4; font-size:12px; font-weight:600; padding:5px 14px; border-radius:20px; cursor:pointer; font-family:inherit; transition:background .2s; letter-spacing:.05em; }
+.arc-machine-close:hover { background:rgba(78,205,196,0.12); }
+.arc-machine-content { flex:1; overflow-y:auto; padding:32px 40px; color:#c9d1e0; font-size:13.5px; line-height:1.75; max-width:900px; width:100%; margin:0 auto; }
+.arc-machine-content h1 { color:#4ecdc4; font-size:22px; margin:0 0 12px; border-bottom:1px solid rgba(78,205,196,0.3); padding-bottom:8px; }
+.arc-machine-content h2 { color:#a78bfa; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:28px 0 8px; }
+.arc-machine-content h3 { color:#f9e79f; font-size:13px; font-weight:700; margin:18px 0 6px; }
+.arc-machine-content blockquote { border-left:3px solid #4ecdc4; padding:10px 16px; margin:12px 0 20px; background:rgba(78,205,196,0.05); border-radius:0 6px 6px 0; color:#a8b8d0; font-style:italic; }
+.arc-machine-content a { color:#4ecdc4; text-decoration:none; border-bottom:1px solid rgba(78,205,196,0.35); }
+.arc-machine-content a:hover { color:#7eeee8; }
+.arc-machine-content ul { list-style:none; padding-left:0; margin:4px 0 12px; }
+.arc-machine-content ul li { padding-left:18px; position:relative; margin-bottom:4px; }
+.arc-machine-content ul li::before { content:"›"; position:absolute; left:0; color:#4ecdc4; font-weight:bold; }
+.arc-machine-content hr { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:24px 0; }
+.arc-machine-content strong { color:#e8edf5; font-weight:700; }
+.arc-machine-content table { width:100%; border-collapse:collapse; font-size:12px; margin:12px 0 20px; }
+.arc-machine-content th { background:rgba(78,205,196,0.1); color:#4ecdc4; padding:8px 12px; text-align:left; border:1px solid rgba(255,255,255,0.1); font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+.arc-machine-content td { padding:7px 12px; border:1px solid rgba(255,255,255,0.07); color:#b0bec8; }
+.arc-machine-content tr:hover td { background:rgba(255,255,255,0.03); }
+.arc-machine-loading { color:rgba(255,255,255,0.35); font-size:13px; padding:40px 0; text-align:center; letter-spacing:.05em; }
+.arc-machine-content::-webkit-scrollbar { width:5px; } .arc-machine-content::-webkit-scrollbar-thumb { background:rgba(78,205,196,0.3); border-radius:3px; }
+@media(max-width:600px){ .arc-machine-content { padding:20px 18px; font-size:12.5px; } }
+</style>
+<!-- FLOATING AI/HUMAN SMART TOOL -->
+<div class="arc-float-wrap">
+  <div class="arc-float-pill">
+    <div class="arc-float-toggle" id="arcFloatToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle AI machine view">
+      <span class="arc-float-label" id="arcFloatHuman">HUMAN</span>
+      <div class="arc-float-switch-track">
+        <span class="arc-float-knob"></span>
+      </div>
+      <span class="arc-float-label" id="arcFloatAI">AI - SGE</span>
+    </div>
+    <span class="arc-float-sep"></span>
+    <button class="arc-float-smart-btn" id="arcFloatSmartBtn" type="button" aria-haspopup="dialog">What is a SMART Website</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var floatToggle = document.getElementById('arcFloatToggle');
+  var overlay     = document.getElementById('arcMachineOverlay');
+  var closeBtn    = document.getElementById('arcMachineClose');
+  var content     = document.getElementById('arcMachineContent');
+  var fileLabel   = document.getElementById('arcMachineFileLabel');
+  var floatHuman  = document.getElementById('arcFloatHuman');
+  var floatAI     = document.getElementById('arcFloatAI');
+  var smartPopup  = document.getElementById('arcSmartPopup');
+  var smartClose  = document.getElementById('arcSmartPopupClose');
+  var floatSmartBtn = document.getElementById('arcFloatSmartBtn');
+
+  var tabLoaded  = { llms: false, schema: false, sitemap: false };
+  var tabCache   = { llms: null,  schema: null,  sitemap: null  };
+  var currentTab = 'llms';
+  var filePaths  = {
+    llms:    'arcdialysis.com/llms.txt',
+    schema:  'arcdialysis.com — schema.org JSON-LD',
+    sitemap: 'arcdialysis.com/sitemap'
+  };
+
+  function setLabels(on){
+    floatHuman.classList.toggle('active', !on);
+    floatAI.classList.toggle('active', on);
+    floatToggle.setAttribute('aria-checked', on ? 'true' : 'false');
+    var pill = document.querySelector('.arc-float-pill');
+    if(pill) pill.classList.toggle('ai-active', on);
+  }
+  setLabels(false);
+
+  function loadTab(tab){
+    currentTab = tab;
+    document.querySelectorAll('.arc-machine-tab').forEach(function(btn){
+      var active = btn.getAttribute('data-tab') === tab;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    if(fileLabel) fileLabel.textContent = filePaths[tab] || '';
+    if(tabLoaded[tab]){ content.innerHTML = tabCache[tab]; return; }
+
+    if(tab === 'llms'){
+      content.innerHTML = '<div class="arc-machine-loading">Loading llms.txt…</div>';
+      fetch('/llms.txt')
+        .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+        .then(function(txt){ tabCache.llms = renderMD(txt); content.innerHTML = tabCache.llms; tabLoaded.llms = true; })
+        .catch(function(){ content.innerHTML='<div class="arc-machine-loading">⚠ llms.txt not found at /llms.txt</div>'; });
+    } else if(tab === 'schema'){
+      content.innerHTML = '<div class="arc-machine-loading">Reading schema.org markup…</div>';
+      try {
+        var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+        if(!scripts.length) throw new Error();
+        var out = '';
+        scripts.forEach(function(s,i){
+          var parsed = JSON.parse(s.textContent);
+          out += '<h2>JSON-LD Block '+(i+1)+'</h2><pre>'+escHtml(JSON.stringify(parsed,null,2))+'</pre>';
+        });
+        tabCache.schema = out; content.innerHTML = tabCache.schema; tabLoaded.schema = true;
+      } catch(e){
+        content.innerHTML = '<div class="arc-machine-loading">⚠ No schema.org JSON-LD found on this page.</div>';
+      }
+    } else if(tab === 'sitemap'){
+      content.innerHTML = '<div class="arc-machine-loading">Loading sitemap…</div>';
+      fetch('/sitemap.html')
+        .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+        .then(function(html){
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html,'text/html');
+          var links = doc.querySelectorAll('a[href]');
+          if(!links.length) throw new Error();
+          var out = '<h1>Sitemap</h1><ul>';
+          links.forEach(function(a){ out += '<li><a href="'+escHtml(a.getAttribute('href'))+'" target="_blank" rel="noopener">'+escHtml(a.textContent.trim())+'<span class="sr-only"> (opens in new window)</span></a></li>'; });
+          out += '</ul>';
+          tabCache.sitemap = out; content.innerHTML = tabCache.sitemap; tabLoaded.sitemap = true;
+        })
+        .catch(function(){ content.innerHTML='<div class="arc-machine-loading">⚠ sitemap.html not found.</div>'; });
+    }
+  }
+
+  function escHtml(str){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  document.querySelectorAll('.arc-machine-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){ loadTab(btn.getAttribute('data-tab')); });
+  });
+
+  function openMachine(){
+    setLabels(true);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    closeBtn.focus();
+    loadTab(currentTab);
+  }
+  function closeMachine(){
+    setLabels(false);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    floatToggle.focus();
+  }
+
+  function handleToggle(){ overlay.classList.contains('active') ? closeMachine() : openMachine(); }
+  floatToggle.addEventListener('click', handleToggle);
+  floatToggle.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); handleToggle(); }});
+  closeBtn.addEventListener('click', closeMachine);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('active')) closeMachine(); });
+
+  if(floatSmartBtn && smartPopup && smartClose){
+    floatSmartBtn.addEventListener('click', function(){ smartPopup.classList.add('active'); smartClose.focus(); });
+    smartClose.addEventListener('click', function(){ smartPopup.classList.remove('active'); floatSmartBtn.focus(); });
+    smartPopup.addEventListener('click', function(e){ if(e.target===smartPopup) smartPopup.classList.remove('active'); });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && smartPopup.classList.contains('active')){ smartPopup.classList.remove('active'); floatSmartBtn.focus(); }
+    });
+  }
+
+  function renderMD(text){
+    var lines=text.split('\n'),html='',inList=false,inTable=false,tHead=true;
+    for(var i=0;i<lines.length;i++){
+      var l=lines[i];
+      if(/^---+$/.test(l.trim())){ if(inList){html+='</ul>';inList=false;} if(inTable){html+='</tbody></table>';inTable=false;} html+='<hr>'; continue; }
+      if(l.startsWith('### ')){ if(inList){html+='</ul>';inList=false;} html+='<h3>'+inl(l.slice(4))+'</h3>'; continue; }
+      if(l.startsWith('## ')) { if(inList){html+='</ul>';inList=false;} html+='<h2>'+inl(l.slice(3))+'</h2>'; continue; }
+      if(l.startsWith('# '))  { if(inList){html+='</ul>';inList=false;} html+='<h1>'+inl(l.slice(2))+'</h1>'; continue; }
+      if(l.startsWith('> '))  { if(inList){html+='</ul>';inList=false;} html+='<blockquote>'+inl(l.slice(2))+'</blockquote>'; continue; }
+      if(l.startsWith('|')){
+        if(!inTable){html+='<table>';inTable=true;tHead=true;}
+        var cells=l.split('|').filter(function(c,idx,a){return idx>0&&idx<a.length-1;});
+        if(cells.every(function(c){return /^[-: ]+$/.test(c);})){html+='</thead><tbody>';tHead=false;continue;}
+        var tag=tHead?'th':'td';
+        html+='<tr>'+cells.map(function(c){return '<'+tag+'>'+inl(c.trim())+'</'+tag+'>';}).join('')+'</tr>';
+        continue;
+      } else if(inTable){html+='</tbody></table>';inTable=false;tHead=true;}
+      if(l.startsWith('- ')){ if(!inList){html+='<ul>';inList=true;} html+='<li>'+inl(l.slice(2))+'</li>'; continue; }
+      else if(inList){html+='</ul>';inList=false;}
+      if(l.trim()==='') continue;
+      html+='<p>'+inl(l)+'</p>';
+    }
+    if(inList) html+='</ul>';
+    if(inTable) html+='</tbody></table>';
+    return html;
+  }
+  function inl(t){
+    return t
+      .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g,'<em>$1</em>')
+      .replace(/`([^`]+)`/g,'<code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:0.9em">$1</code>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1<span class="sr-only"> (opens in new window)</span></a>');
+  }
+})();
+</script>
+</body>
+</html>

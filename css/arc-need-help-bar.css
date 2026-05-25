@@ -1,0 +1,180 @@
+/* =========================================================
+   ARC Dialysis - Need Help Bar (Component CSS)
+   ---------------------------------------------------------
+   Cleaned + Safe Version
+   - Keeps dropdown visible
+   - Hides Google branding only
+   - Prevents page conflicts
+   ========================================================= */
+
+.need-help-bar{
+  background:#121536;
+  padding:12px 15px;
+  text-align:center;
+  position:relative;
+  z-index:1000;
+}
+
+.need-help-bar .help-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.need-help-bar .help-text{
+  color:#ffffff;
+  font-size:16px;
+  font-weight:600;
+  margin-right:20px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.need-help-bar .help-buttons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.need-help-bar .help-btn{
+  background:#ffffff;
+  color:#003366;
+  border-radius:25px;
+  padding:10px 16px;
+  min-width:64px;
+  font-weight:700;
+  text-decoration:none;
+  border:2px solid #ffffff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:14px;
+  transition:all .25s ease;
+}
+
+.need-help-bar .help-btn:hover{
+  background:transparent;
+  color:#ffffff;
+  border:2px solid #ffffff;
+}
+
+.need-help-bar .help-btn.text-btn{
+  background:transparent;
+  color:#ffffff;
+  border:2px solid #ffffff;
+}
+
+.need-help-bar .help-btn.text-btn:hover{
+  background:#ffffff;
+  color:#003366;
+  border:2px solid #ffffff;
+}
+
+.need-help-bar .help-btn i{
+  font-size:18px;
+  line-height:1;
+}
+
+@media (max-width:768px){
+  .need-help-bar .help-content{
+    flex-direction:column;
+    gap:12px;
+  }
+  .need-help-bar .help-text{
+    margin-right:0;
+    text-align:center;
+  }
+  .need-help-bar .help-buttons{
+    justify-content:center;
+  }
+}
+
+/* =========================
+   GOOGLE TRANSLATE WIDGET
+   ========================= */
+.need-help-bar .translate-wrapper{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  margin-left:15px;
+  vertical-align:middle;
+}
+
+#google_translate_element{
+  display:block;
+}
+
+.goog-te-banner-frame.skiptranslate{
+  display:none !important;
+}
+
+iframe.goog-te-banner-frame{
+  display:none !important;
+}
+
+#google_translate_element .goog-te-gadget{
+  font-family: Lato, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+
+
+#google_translate_element select{
+  background:#ffffff;
+  color:#333;
+  border:1px solid #ccc;
+  padding:8px 12px;
+  border-radius:4px;
+  font-size:14px !important;
+  font-family:Lato, sans-serif !important;
+  cursor:pointer;
+  outline:none;
+}
+
+#google_translate_element select:hover,
+#google_translate_element select:focus{
+  border-color:#3498db;
+}
+
+/* hide branding only */
+#google_translate_element .goog-logo-link{
+  display:none !important;
+}
+
+/* =========================================================
+   FORCE DROPDOWN TO DISPLAY (ANTI-CONFLICT)
+   ========================================================= */
+#google_translate_element,
+#google_translate_element * {
+  visibility: visible !important;
+}
+
+#google_translate_element select,
+#google_translate_element .goog-te-combo {
+  display: inline-block !important;
+  opacity: 1 !important;
+  width: auto !important;
+}
+
+#google_translate_element img {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TRANSLATE DROPDOWN: ENSURE IT'S NOT "PIN-SIZED"
+   ========================================================= */
+.need-help-bar .translate-wrapper{
+  min-width: 230px;
+}
+
+#google_translate_element{
+  min-width: 230px;
+}
+
+#google_translate_element .goog-te-combo{
+  min-width: 230px !important;
+}

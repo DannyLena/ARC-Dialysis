@@ -1,0 +1,177 @@
+/* =========================================================
+   ARC FOOTER (No-conflict) — arc-footer.css
+   Scope: ONLY #footer so it won’t fight other site styles.
+   Goal: remove the theme's default white widget boxes and
+   unify typography + spacing for ARC footer.
+   ========================================================= */
+
+/* Footer base */
+#footer.footer {
+  background: #0099a8 !important; /* matches inline, but controlled here */
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Keep footer containers transparent (theme sometimes paints them) */
+#footer .container,
+#footer .container-fluid,
+#footer .row,
+#footer [class*="col-"]{
+  background: transparent !important;
+}
+
+/* THE MAIN FIX:
+   Many themes apply a white background + padding + border to .widget
+   (even when .dark is present). This creates the "big white boxes". */
+#footer .widget,
+#footer .widget.dark,
+#footer .widget * {
+  box-shadow: none !important;
+}
+
+#footer .widget,
+#footer .widget.dark {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 0 18px 0 !important;
+}
+
+/* Headings */
+#footer .widget-title {
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin: 0 0 12px 0 !important;
+}
+
+/* Remove theme underline “line-bottom-...” if it renders as a light bar */
+#footer .widget-title.line-bottom-theme-colored-2,
+#footer .widget-title.line-bottom-theme-colored-2:after,
+#footer .widget-title.line-bottom-theme-colored-2:before {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Body text */
+#footer,
+#footer p,
+#footer li,
+#footer address,
+#footer span,
+#footer small {
+  color: rgba(255,255,255,0.95) !important;
+}
+
+#footer address {
+  line-height: 1.6;
+}
+
+/* Links */
+#footer a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+#footer a:hover,
+#footer a:focus {
+  color: #f9e79f !important;
+  text-decoration: underline;
+}
+
+/* Social icons — some themes make them white boxes/circles; force consistent look */
+#footer .styled-icons a,
+#footer .styled-icons a i {
+  color: #ffffff !important;
+}
+
+#footer .styled-icons.icon-circled a,
+#footer .styled-icons.icon-circled a i {
+  border-color: rgba(255,255,255,0.55) !important;
+}
+
+#footer .styled-icons.icon-circled a {
+  background: transparent !important; /* prevents white circles/boxes */
+}
+
+#footer .styled-icons.icon-circled a:hover {
+  background: rgba(255,255,255,0.12) !important;
+  text-decoration: none;
+}
+
+/* ARC Dialysis Pages list (latest-posts) — prevent article tiles/boxes */
+#footer .latest-posts,
+#footer .latest-posts article,
+#footer .latest-posts .post,
+#footer .latest-posts .media-post,
+#footer .latest-posts .post-right {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#footer .latest-posts article {
+  padding: 0 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+#footer .latest-posts .post-title {
+  margin: 0 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Buttons in footer */
+#footer .btn,
+#footer .btn:visited {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.55) !important;
+  border-radius: 999px !important;
+  padding: 7px 14px !important;
+  box-shadow: none !important;
+}
+
+#footer .btn:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.8) !important;
+  text-decoration: none !important;
+}
+
+/* Location items — arc-location-selector.css sets background:#ffffff on .location-item;
+   override that inside the footer so it stays transparent */
+#footer .location-item,
+#footer .location-link {
+  background: transparent !important;
+  border-bottom-color: rgba(255,255,255,0.2) !important;
+  color: #ffffff !important;
+}
+
+/* Spacing helpers — keep theme utilities from adding odd blocks */
+#footer .pt-90 { padding-top: 60px !important; }
+#footer .pb-60 { padding-bottom: 40px !important; }
+
+/* Bottom copyright bar */
+#footer .container-fluid.p-20 {
+  background: #007a87 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  #footer .widget,
+  #footer .widget.dark {
+    text-align: center;
+  }
+  #footer address { text-align: center !important; }
+  #footer .styled-icons { display: flex; justify-content: center; }
+}
+
+@media (max-width: 767px) {
+  #footer .pt-90 { padding-top: 40px !important; }
+  #footer .pb-60 { padding-bottom: 30px !important; }
+  #footer .widget-title { font-size: 16px; }
+  #footer p, #footer address { font-size: 13px; }
+}

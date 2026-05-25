@@ -1,0 +1,242 @@
+/* ========================================
+   ARC Dialysis Location Selector Popup
+   Standalone CSS File
+   ======================================== */
+
+/* Location Selector Popup Styles */
+.location-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.location-popup-overlay.active {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.location-popup {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-in-out;
+}
+
+.location-popup-header {
+    background: linear-gradient(135deg, #8AC6E9 0%, #8AC6E9 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-popup-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.location-popup-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.location-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.location-popup-content {
+    padding: 0;
+    max-height: calc(80vh - 80px);
+    overflow-y: auto;
+}
+
+.location-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.location-item {
+    border-bottom: 1px solid #e0e0e0;
+    background: #ffffff;
+}
+
+.location-item:last-child {
+    border-bottom: none;
+}
+
+.location-link {
+    display: block;
+    padding: 18px 24px;
+    text-decoration: none;
+    color: #333;
+    background: #ffffff;
+    transition: background 0.2s, padding-left 0.2s;
+}
+
+.location-link:hover,
+.location-link:active {
+    background: #f5f9fc;
+    padding-left: 30px;
+}
+
+.location-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.location-phone {
+    font-size: 1.05em;
+    color: #000000;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.location-phone::before {
+  content: "☎";
+  margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.location-city {
+    font-size: 1.1em;
+    color: #000000;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Call Button Enhancement */
+.call-button-enhanced {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: #8AC6E9;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(26, 82, 118, 0.3);
+}
+
+.call-button-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 82, 118, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .location-popup {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .location-popup-header {
+        padding: 16px;
+    }
+    
+    .location-popup-header h3 {
+        font-size: 1.2em;
+    }
+    
+    .location-item {
+        background: #ffffff !important;
+    }
+    
+    .location-link {
+        padding: 16px 20px;
+        background: #ffffff !important;
+    }
+    
+    .location-link:hover,
+    .location-link:active,
+    .location-link:focus {
+        background: #f5f9fc !important;
+        padding-left: 20px;
+    }
+    
+    .location-name {
+        font-size: 1.05em;
+        color: #1a5276 !important;
+    }
+    
+    .location-phone {
+        font-size: 1em;
+        color: #2874a6 !important;
+    }
+    
+    .location-city {
+        color: #666 !important;
+    }
+}
+
+/* Scrollbar styling */
+.location-popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.location-popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.location-popup-content::-webkit-scrollbar-thumb {
+    background: #2874a6;
+    border-radius: 4px;
+}
+
+.location-popup-content::-webkit-scrollbar-thumb:hover {
+    background: #1a5276;
+}

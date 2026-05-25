@@ -1,0 +1,24 @@
+/* Fix #3: remove sticky header shadow line across pages */
+#header,
+.header-nav,
+.header-nav-wrapper,
+.header-nav-wrapper.navbar-scrolltofixed,
+.header-nav-wrapper.scroll-to-fixed-fixed,
+.header-nav-wrapper.scroll-to-fixed-fixed .container,
+.header-nav-wrapper.scroll-to-fixed-fixed .menuzord,
+.scroll-to-fixed-fixed,
+.scroll-to-fixed-placeholder,
+.inner-sticky-wrapper {
+  box-shadow: none !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  filter: none !important;
+  background-image: none !important;
+}
+
+.header-nav::after,
+.header-nav-wrapper::after,
+.scroll-to-fixed-fixed::after,
+.scroll-to-fixed-placeholder::after {
+  content: none !important;
+}

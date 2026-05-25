@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Dialysis — Document Conversion Workflow</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1E4D6B;
+      --navy-dark: #163a52;
+      --teal:      #00838F;
+      --teal-light:#00a0ae;
+      --teal-pale: #e0f5f6;
+      --white:     #ffffff;
+      --gray-50:   #f7f9fb;
+      --gray-100:  #edf1f5;
+      --gray-200:  #d6dde5;
+      --gray-600:  #5a6a7a;
+      --gray-800:  #2d3e4e;
+      --green:     #1a7f4b;
+      --green-pale:#e6f6ed;
+      --amber:     #b45309;
+      --amber-pale:#fef3c7;
+      --shadow-sm: 0 1px 4px rgba(30,77,107,0.10);
+      --shadow-md: 0 4px 16px rgba(30,77,107,0.14);
+      --shadow-lg: 0 8px 32px rgba(30,77,107,0.18);
+      --radius:    10px;
+      --radius-lg: 16px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      min-height: 100vh;
+      padding: 0 0 48px;
+    }
+
+    /* ── HEADER BANNER ─────────────────────────────────────── */
+    .page-header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--teal) 100%);
+      padding: 36px 48px 32px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      right: 80px; bottom: -80px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(0,163,174,0.10);
+    }
+    .header-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.60);
+      margin-bottom: 8px;
+    }
+    .header-title {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .header-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      font-weight: 400;
+    }
+    .header-meta {
+      margin-top: 16px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    /* ── MAIN LAYOUT ───────────────────────────────────────── */
+    .main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 32px 0;
+    }
+
+    /* ── COLUMN LABELS ─────────────────────────────────────── */
+    .col-labels {
+      display: grid;
+      grid-template-columns: 300px 1fr 300px;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+    .col-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 0;
+    }
+    .col-label.input  { color: var(--navy); border-bottom: 3px solid var(--navy); }
+    .col-label.process{ color: var(--teal); border-bottom: 3px solid var(--teal); }
+    .col-label.output { color: var(--green); border-bottom: 3px solid var(--green); }
+
+    /* ── THREE-COLUMN FLOW GRID ────────────────────────────── */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr 300px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── INPUT COLUMN ──────────────────────────────────────── */
+    .input-col, .output-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 8px;
+    }
+
+    .file-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .file-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .file-card-header {
+      padding: 14px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .file-card-header.pdf-hdr  { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); }
+    .file-card-header.docx-hdr { background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); }
+    .file-icon {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .file-card-title {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .file-card-ext {
+      color: rgba(255,255,255,0.75);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .file-card-body {
+      padding: 14px 16px 16px;
+    }
+    .file-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-bottom: 7px;
+      font-size: 12.5px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+    .file-detail:last-child { margin-bottom: 0; }
+    .detail-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .input-label {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+
+    /* ── OUTPUT CARDS ──────────────────────────────────────── */
+    .output-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--green);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .output-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .output-card-header {
+      padding: 14px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .output-card-header.docx-out { background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); }
+    .output-card-header.pdf-out  { background: linear-gradient(135deg, #1a7f4b 0%, #22a060 100%); }
+    .check-badge {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .output-label {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+    .output-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+    .stat-icon { font-size: 13px; flex-shrink: 0; }
+    .stat-label { color: var(--gray-600); }
+    .stat-value { color: var(--gray-800); font-weight: 600; }
+
+    .verified-row {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--gray-100);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .verified-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--green);
+      font-weight: 600;
+    }
+    .verified-item span { font-size: 12px; }
+
+    /* ── PROCESS PIPELINE ──────────────────────────────────── */
+    .pipeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      padding: 0 8px;
+    }
+
+    .step-card {
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      border-left: 4px solid var(--teal);
+      padding: 14px 18px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step-card:hover {
+      transform: translateX(3px);
+      box-shadow: var(--shadow-md);
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .step-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-icon { font-size: 16px; flex-shrink: 0; }
+    .step-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+      flex: 1;
+    }
+    .step-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--teal-pale);
+      color: var(--teal);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+    .step-desc {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.55;
+      padding-left: 36px;
+    }
+    .step-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+      padding-left: 36px;
+    }
+    .tech-tag {
+      font-size: 10px;
+      font-weight: 600;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      border-radius: 4px;
+      padding: 2px 7px;
+      border: 1px solid var(--gray-200);
+    }
+    .tech-tag.highlight {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* connector arrows between steps */
+    .step-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 3px 0;
+    }
+    .connector-line {
+      width: 2px;
+      height: 18px;
+      background: linear-gradient(to bottom, var(--teal), var(--navy));
+      opacity: 0.4;
+    }
+    .connector-arrow {
+      font-size: 14px;
+      color: var(--teal);
+      opacity: 0.7;
+      line-height: 1;
+    }
+
+    /* horizontal arrows between columns */
+    .h-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 120px;
+      color: var(--teal);
+      font-size: 28px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* ── INPUT → PROCESS CONNECTOR ─────────────────────────── */
+    .side-connectors {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+    }
+
+    /* ── COMPLIANCE SECTION ────────────────────────────────── */
+    .compliance-section {
+      max-width: 1280px;
+      margin: 36px auto 0;
+      padding: 0 32px;
+    }
+    .compliance-inner {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .compliance-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .compliance-header-icon { font-size: 22px; }
+    .compliance-header-title {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .compliance-header-sub {
+      color: rgba(255,255,255,0.70);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .compliance-body {
+      padding: 24px 28px 28px;
+    }
+    .badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 10px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .badge-icon { font-size: 20px; }
+    .badge-text { line-height: 1.3; }
+    .badge-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .badge-sub {
+      font-size: 10.5px;
+      color: var(--gray-600);
+    }
+
+    .verified-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .verified-card {
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      padding: 14px 16px;
+    }
+    .verified-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--teal);
+    }
+    .verified-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 7px;
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+    .verified-card-item:last-child { margin-bottom: 0; }
+    .vi-check { color: var(--green); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .vi-text { color: var(--gray-800); }
+    .vi-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: var(--gray-100);
+      border-radius: 3px;
+      padding: 0 4px;
+      font-size: 11px;
+      color: var(--navy);
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    .page-footer {
+      max-width: 1280px;
+      margin: 32px auto 0;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-size: 12px;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    .footer-brand strong { color: var(--navy); }
+    .footer-date {
+      font-size: 11px;
+      color: var(--gray-600);
+    }
+
+    /* ── DIVIDER LABEL ─────────────────────────────────────── */
+    .section-divider {
+      text-align: center;
+      margin: 28px 0 18px;
+      position: relative;
+    }
+    .section-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px;
+      background: var(--gray-200);
+      z-index: 0;
+    }
+    .section-divider span {
+      position: relative;
+      z-index: 1;
+      background: var(--gray-50);
+      padding: 0 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-600);
+    }
+
+    /* ── FLOW ARROWS (CSS-drawn) ───────────────────────────── */
+    .flow-arrows-row {
+      display: grid;
+      grid-template-columns: 300px auto 1fr auto 300px;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 16px;
+    }
+    .arrow-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 0;
+    }
+    .arrow-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .arrow-svg {
+      width: 48px;
+      height: 16px;
+    }
+
+    /* ── PIPELINE WRAPPER with side arrows ─────────────────── */
+    .pipeline-wrapper {
+      position: relative;
+    }
+
+    /* floating connectors from input to pipeline and pipeline to output */
+    .conn-in, .conn-out {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+    .conn-in  { left: -44px; }
+    .conn-out { right: -44px; }
+
+  </style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div style="max-width:1280px; margin:0 auto; padding:0 16px; position:relative; z-index:1;">
+    <div class="header-eyebrow">ARC Dialysis &mdash; Document Engineering</div>
+    <div class="header-title">Accessible Document Conversion Workflow</div>
+    <div class="header-subtitle">From legacy PDF source to fully tagged, ADA/WCAG/508-compliant Word &amp; PDF deliverables</div>
+    <div class="header-meta">
+      <div class="meta-pill">&#128461; 17-Page Caregiver Guide</div>
+      <div class="meta-pill">&#129302; Claude Vision Extraction</div>
+      <div class="meta-pill">&#128196; python-docx Rebuild</div>
+      <div class="meta-pill">&#9989; Tagged PDF via AppleScript</div>
+      <div class="meta-pill">&#128197; April 13 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- COLUMN HEADERS -->
+  <div class="col-labels">
+    <div class="col-label input">&#8594; Inputs</div>
+    <div class="col-label process">Process Pipeline</div>
+    <div class="col-label output">Outputs &#8594;</div>
+  </div>
+
+  <!-- THREE COLUMN FLOW -->
+  <div class="flow-grid">
+
+    <!-- ── LEFT: INPUTS ── -->
+    <div class="input-col">
+
+      <!-- Input 1: Source PDF -->
+      <div class="file-card">
+        <div class="file-card-header pdf-hdr">
+          <div class="file-icon">&#128196;</div>
+          <div>
+            <div class="file-card-ext">PDF &mdash; Source</div>
+            <div class="file-card-title">Caregiver &amp; Family Guide</div>
+          </div>
+        </div>
+        <div class="file-card-body">
+          <div class="input-label">Input 1</div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>File:</strong> ARC-Dialysis-Caregiver-Family-Guide-2-18-26.pdf</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Pages:</strong> 17 pages</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Status:</strong> Not accessibility-compliant</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Content:</strong> Text, headings, callouts, bullets, 8 Parts</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Problem:</strong> No tags, no semantic structure, no metadata</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input 2: DOTX Template -->
+      <div class="file-card">
+        <div class="file-card-header docx-hdr">
+          <div class="file-icon">&#128203;</div>
+          <div>
+            <div class="file-card-ext">DOTX &mdash; Template</div>
+            <div class="file-card-title">ARC Dialysis Letterhead</div>
+          </div>
+        </div>
+        <div class="file-card-body">
+          <div class="input-label">Input 2</div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>File:</strong> ARC-Dialysis-Kidney-Care-Letterhead.dotx</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Type:</strong> Microsoft Word Template (.dotx)</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Contains:</strong> Header logo, footer with address</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Branding:</strong> ARC Dialysis / Kidney Care identity</span>
+          </div>
+          <div class="file-detail">
+            <div class="detail-dot"></div>
+            <span><strong>Challenge:</strong> python-docx cannot open .dotx natively</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- connector hint -->
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; padding:4px 0; color:var(--teal); opacity:0.7;">
+        <div style="flex:1; height:1px; background:var(--teal); opacity:0.3;"></div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; white-space:nowrap;">Feeds Pipeline</div>
+        <div style="font-size:18px;">&#8594;</div>
+      </div>
+
+    </div><!-- /input-col -->
+
+    <!-- ── CENTER: PIPELINE ── -->
+    <div class="pipeline-wrapper">
+      <div class="pipeline">
+
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num">1</div>
+            <div class="step-icon">&#128065;&#65039;</div>
+            <div class="step-title">Extract PDF Content</div>
+            <div class="step-tag">Vision AI</div>
+          </div>
+          <div class="step-desc">
+            Read all 17 pages of the source PDF using Claude&rsquo;s vision model. Capture text, headings, callout boxes, bullet lists, and document structure from raw page images.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">Claude Vision</div>
+            <div class="tech-tag">PyMuPDF</div>
+            <div class="tech-tag">17 pages</div>
+            <div class="tech-tag">8 Parts</div>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">&#9660;</div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num">2</div>
+            <div class="step-icon">&#128295;</div>
+            <div class="step-title">Convert Template</div>
+            <div class="step-tag">File Patch</div>
+          </div>
+          <div class="step-desc">
+            Patch the <strong>.dotx</strong> content type to <strong>.docx</strong> so python-docx can open it, while fully preserving the branded header logo and footer address block.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">python-docx</div>
+            <div class="tech-tag">ZIP patch</div>
+            <div class="tech-tag">content_types.xml</div>
+            <div class="tech-tag">Header/Footer preserved</div>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">&#9660;</div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num">3</div>
+            <div class="step-icon">&#127963;&#65039;</div>
+            <div class="step-title">Rebuild Document Structure</div>
+            <div class="step-tag">Semantic</div>
+          </div>
+          <div class="step-desc">
+            Apply proper semantic heading hierarchy with ADA-compliant styles: <strong>H1</strong> Part banners &rarr; <strong>H2</strong> section titles &rarr; <strong>H3</strong> subsections. Preserve all body content.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">Heading 1</div>
+            <div class="tech-tag highlight">Heading 2</div>
+            <div class="tech-tag highlight">Heading 3</div>
+            <div class="tech-tag">Normal style</div>
+            <div class="tech-tag">OOXML</div>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">&#9660;</div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num">4</div>
+            <div class="step-icon">&#9855;</div>
+            <div class="step-title">Apply Accessibility</div>
+            <div class="step-tag">ADA / 508</div>
+          </div>
+          <div class="step-desc">
+            Set document metadata (Title, Author, Language <code style="font-size:11px;background:var(--gray-100);padding:1px 4px;border-radius:3px;">en-US</code>), apply language tags on every run, add callout boxes with left-border styling, and apply List Paragraph bullets.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">Lang: en-US</div>
+            <div class="tech-tag">Document Title</div>
+            <div class="tech-tag">Run language tags</div>
+            <div class="tech-tag">Callout borders</div>
+            <div class="tech-tag">List Paragraph</div>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">&#9660;</div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num">5</div>
+            <div class="step-icon">&#128196;</div>
+            <div class="step-title">Export Word Document</div>
+            <div class="step-tag">DOCX Output</div>
+          </div>
+          <div class="step-desc">
+            Save the fully structured, accessible, branded document as a <strong>.docx</strong> file with all styles, metadata, and layout finalized.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">ARC-Dialysis-Caregiver-Family-Guide-2026-04-13.docx</div>
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag">128 KB</div>
+            <div class="tech-tag">8 Parts</div>
+            <div class="tech-tag">ARC Branded</div>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">&#9660;</div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card" style="border-left-color: var(--navy);">
+          <div class="step-header">
+            <div class="step-num" style="background:var(--navy);">6</div>
+            <div class="step-icon">&#127381;</div>
+            <div class="step-title">Export PDF via Microsoft Word</div>
+            <div class="step-tag" style="background:rgba(30,77,107,0.10);color:var(--navy);">Tagged PDF</div>
+          </div>
+          <div class="step-desc">
+            Use Microsoft Word&rsquo;s AppleScript automation to export a <strong>Tagged PDF</strong>. Word produces best-in-class tagged PDFs with full StructTree, MarkInfo, bookmarks, and language metadata — superior to any other PDF export method.
+          </div>
+          <div class="step-tags-row">
+            <div class="tech-tag highlight">AppleScript</div>
+            <div class="tech-tag highlight">Microsoft Word</div>
+            <div class="tech-tag">Tagged PDF</div>
+            <div class="tech-tag">StructTreeRoot</div>
+            <div class="tech-tag">Bookmarks</div>
+          </div>
+        </div>
+
+      </div><!-- /pipeline -->
+    </div><!-- /pipeline-wrapper -->
+
+    <!-- ── RIGHT: OUTPUTS ── -->
+    <div class="output-col">
+
+      <!-- connector hint -->
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; padding:4px 0; color:var(--green); opacity:0.8;">
+        <div style="font-size:18px;">&#8594;</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; white-space:nowrap;">Delivers</div>
+        <div style="flex:1; height:1px; background:var(--green); opacity:0.3;"></div>
+      </div>
+
+      <!-- Output 1: DOCX -->
+      <div class="output-card">
+        <div class="output-card-header docx-out">
+          <div class="file-icon">&#128196;</div>
+          <div style="flex:1;">
+            <div class="file-card-ext" style="color:rgba(255,255,255,0.75);">DOCX &mdash; Word Document</div>
+            <div class="file-card-title">Accessible Caregiver Guide</div>
+          </div>
+          <div class="check-badge">&#10003;</div>
+        </div>
+        <div class="file-card-body">
+          <div class="output-label">Output 1</div>
+
+          <div class="output-stat">
+            <div class="stat-icon">&#128194;</div>
+            <div><span class="stat-label">File: </span><span class="stat-value" style="font-size:11px;">ARC-Dialysis-Caregiver-Family-Guide-2026-04-13.docx</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#128190;</div>
+            <div><span class="stat-label">Size: </span><span class="stat-value">128 KB</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#128218;</div>
+            <div><span class="stat-label">Structure: </span><span class="stat-value">8 Parts, fully hierarchical</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#127759;</div>
+            <div><span class="stat-label">Language: </span><span class="stat-value">en-US on all runs</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#127775;</div>
+            <div><span class="stat-label">Branding: </span><span class="stat-value">ARC Dialysis letterhead</span></div>
+          </div>
+
+          <div class="verified-row">
+            <div class="verified-item"><span>&#9989;</span> ADA-compliant heading hierarchy</div>
+            <div class="verified-item"><span>&#9989;</span> Semantic styles (H1/H2/H3)</div>
+            <div class="verified-item"><span>&#9989;</span> Document metadata set</div>
+            <div class="verified-item"><span>&#9989;</span> Callout boxes formatted</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Output 2: PDF -->
+      <div class="output-card" style="border-color: #1a7f4b;">
+        <div class="output-card-header pdf-out">
+          <div class="file-icon">&#128196;</div>
+          <div style="flex:1;">
+            <div class="file-card-ext" style="color:rgba(255,255,255,0.75);">PDF &mdash; Tagged Document</div>
+            <div class="file-card-title">Tagged Accessible PDF</div>
+          </div>
+          <div class="check-badge" style="background:rgba(255,255,255,0.25);">&#10003;</div>
+        </div>
+        <div class="file-card-body">
+          <div class="output-label">Output 2</div>
+
+          <div class="output-stat">
+            <div class="stat-icon">&#128194;</div>
+            <div><span class="stat-label">File: </span><span class="stat-value" style="font-size:11px;">ARC-Dialysis-Caregiver-Family-Guide-2026-04-13.pdf</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#128190;</div>
+            <div><span class="stat-label">Size: </span><span class="stat-value">261 KB</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#128196;</div>
+            <div><span class="stat-label">Pages: </span><span class="stat-value">16 pages</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#127881;</div>
+            <div><span class="stat-label">Tags: </span><span class="stat-value">MarkInfo=Marked &#10003;</span></div>
+          </div>
+          <div class="output-stat">
+            <div class="stat-icon">&#127759;</div>
+            <div><span class="stat-label">Language: </span><span class="stat-value">en-US metadata</span></div>
+          </div>
+
+          <div class="verified-row">
+            <div class="verified-item"><span>&#9989;</span> StructTreeRoot present</div>
+            <div class="verified-item"><span>&#9989;</span> MarkInfo = Marked</div>
+            <div class="verified-item"><span>&#9989;</span> Language tag confirmed</div>
+            <div class="verified-item"><span>&#9989;</span> Bookmarks / Outlines</div>
+            <div class="verified-item"><span>&#9989;</span> PDF/UA + Section 508</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /output-col -->
+
+  </div><!-- /flow-grid -->
+
+</div><!-- /main -->
+
+<!-- COMPLIANCE SECTION -->
+<div class="compliance-section">
+  <div class="compliance-inner">
+
+    <div class="compliance-header">
+      <div class="compliance-header-icon">&#9989;</div>
+      <div>
+        <div class="compliance-header-title">Compliance Verified</div>
+        <div class="compliance-header-sub">All standards confirmed on the final deliverables</div>
+      </div>
+    </div>
+
+    <div class="compliance-body">
+
+      <!-- BADGE ROW -->
+      <div class="badges-row">
+        <div class="badge">
+          <div class="badge-icon">&#9855;</div>
+          <div class="badge-text">
+            <div class="badge-name">ADA Compliant</div>
+            <div class="badge-sub">Americans with Disabilities Act</div>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">&#127760;</div>
+          <div class="badge-text">
+            <div class="badge-name">WCAG 2.1</div>
+            <div class="badge-sub">Web Content Accessibility Guidelines</div>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">&#127968;</div>
+          <div class="badge-text">
+            <div class="badge-name">Section 508</div>
+            <div class="badge-sub">Federal Accessibility Standard</div>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">&#127991;</div>
+          <div class="badge-text">
+            <div class="badge-name">PDF/UA Tagged</div>
+            <div class="badge-sub">Universal Accessibility ISO 14289</div>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">&#128266;</div>
+          <div class="badge-text">
+            <div class="badge-name">Screen Reader Ready</div>
+            <div class="badge-sub">NVDA, JAWS, VoiceOver compatible</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VERIFICATION GRID -->
+      <div class="verified-grid">
+
+        <div class="verified-card">
+          <div class="verified-card-title">&#128196; PDF Tag Verification</div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text"><span class="vi-code">MarkInfo</span> = <span class="vi-code">Marked: True</span> confirmed</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text"><span class="vi-code">StructTreeRoot</span> present in PDF catalog</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text"><span class="vi-code">Lang</span> = <span class="vi-code">en-US</span> in document metadata</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Bookmarks/Outlines present (16 pages)</div>
+          </div>
+        </div>
+
+        <div class="verified-card">
+          <div class="verified-card-title">&#128218; Word Document Verification</div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Document Title metadata set correctly</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Author and language properties populated</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text"><span class="vi-code">en-US</span> language tag on every text run</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Heading styles H1&rarr;H2&rarr;H3 applied semantically</div>
+          </div>
+        </div>
+
+        <div class="verified-card">
+          <div class="verified-card-title">&#127963;&#65039; Structure Verification</div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">8 Parts identified and structured with H1 banners</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">All callout boxes use left-border paragraph style</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">List Paragraph style on all bulleted content</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">ARC Dialysis branded letterhead preserved</div>
+          </div>
+        </div>
+
+        <div class="verified-card">
+          <div class="verified-card-title">&#9881;&#65039; Process Verification</div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Source PDF fully read via Claude Vision (all 17 pages)</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text"><span class="vi-code">.dotx</span> &rarr; <span class="vi-code">.docx</span> content-type patch successful</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Microsoft Word AppleScript export completed</div>
+          </div>
+          <div class="verified-card-item">
+            <div class="vi-check">&#10003;</div>
+            <div class="vi-text">Both .docx (128 KB) and .pdf (261 KB) delivered</div>
+          </div>
+        </div>
+
+      </div><!-- /verified-grid -->
+
+    </div><!-- /compliance-body -->
+  </div><!-- /compliance-inner -->
+</div><!-- /compliance-section -->
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <div class="footer-brand"><strong>ARC Dialysis</strong> &mdash; Document Accessibility Engineering</div>
+  <div class="footer-date">Generated April 13, 2026 &nbsp;&middot;&nbsp; Powered by Claude Vision + python-docx + Microsoft Word</div>
+</div>
+
+</body>
+</html>

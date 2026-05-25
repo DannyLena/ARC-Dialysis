@@ -1,0 +1,189 @@
+/* =========================================================
+   ARC Dialysis - Need Help Bar (Component CSS)
+   ---------------------------------------------------------
+   Purpose:
+   - Styles ONLY the dark-blue "Talk to a kidney care navigator" bar
+   - Styles the Google Translate dropdown inside the bar
+
+   Notes:
+   - Intentionally avoids broad/global rules (e.g., img{}, body{}, html{})
+     to prevent layout distortion on other pages.
+   ========================================================= */
+
+/* =========================
+   NEED HELP NOW? TOP BAR
+   Background: Dark Navy #121536
+   ========================= */
+.need-help-bar{
+  background:#121536;
+  padding:12px 15px;
+  text-align:center;
+  position:relative;
+  z-index:1000;
+}
+
+.need-help-bar .help-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.need-help-bar .help-text{
+  color:#ffffff;
+  font-size:16px;
+  font-weight:600;
+  margin-right:20px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+/* Buttons container */
+.need-help-bar .help-buttons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Base button */
+.need-help-bar .help-btn{
+  background:#ffffff;
+  color:#003366;
+  border-radius:25px;
+  padding:10px 22px;
+  font-weight:700;
+  text-decoration:none;
+  border:2px solid #ffffff;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  transition:all .25s ease;
+}
+
+/* Hover */
+.need-help-bar .help-btn:hover{
+  background:transparent;
+  color:#ffffff;
+  border:2px solid #ffffff;
+}
+
+/* Text button (dark outline) */
+.need-help-bar .help-btn.text-btn{
+  background:transparent;
+  color:#ffffff;
+  border:2px solid #ffffff;
+}
+
+.need-help-bar .help-btn.text-btn:hover{
+  background:#ffffff;
+  color:#003366;
+  border:2px solid #ffffff;
+}
+
+.need-help-bar .help-btn i{
+  font-size:16px;
+}
+
+/* Responsive adjustments */
+@media (max-width:768px){
+  .need-help-bar .help-content{
+    flex-direction:column;
+    gap:12px;
+  }
+  .need-help-bar .help-text{
+    margin-right:0;
+    text-align:center;
+  }
+  .need-help-bar .help-buttons{
+    justify-content:center;
+  }
+}
+
+/* =========================
+   GOOGLE TRANSLATE WIDGET
+   ========================= */
+.need-help-bar .translate-wrapper{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  margin-left:15px;
+  vertical-align:middle;
+}
+
+#google_translate_element{
+  display:block;
+}
+
+/* Hide the top banner frame that Google adds when translating */
+.goog-te-banner-frame.skiptranslate{
+  display:none !important;
+}
+
+/* Also hide the iframe banner frame */
+iframe.goog-te-banner-frame{
+  display:none !important;
+}
+
+/* Widget styling */
+#google_translate_element .goog-te-gadget{
+  font-family:Lato, sans-serif !important;
+  font-size:0 !important;
+}
+
+/* Style the dropdown */
+#google_translate_element select{
+  background:#ffffff;
+  color:#333;
+  border:1px solid #ccc;
+  padding:8px 12px;
+  border-radius:4px;
+  font-size:14px !important;
+  font-family:Lato, sans-serif !important;
+  cursor:pointer;
+  outline:none;
+}
+
+/* Hover / focus */
+#google_translate_element select:hover,
+#google_translate_element select:focus{
+  border-color:#3498db;
+}
+
+/* Hide extra Google icon/text */
+#google_translate_element .goog-logo-link,
+#google_translate_element .goog-te-gadget span{
+  display:none !important;
+}
+
+/* Optional “Powered by” label */
+.need-help-bar .translate-powered{
+  color:#ffffff;
+  font-size:12px;
+  margin-top:4px;
+  opacity:.9;
+}
+
+
+/* Icon-only buttons: center the icon and keep the pill shape clean */
+.need-help-bar .help-btn{
+  justify-content:center;
+  padding:10px 16px;   /* tighter since no text */
+  min-width:64px;      /* gives a nice pill size */
+}
+
+.need-help-bar .help-btn i{
+  font-size:18px;
+  line-height:1;
+}
+
+/* Ensure the translate dropdown shows even if other page CSS targets selects */
+#google_translate_element select{
+  display:inline-block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  min-width:220px;
+}
+
+

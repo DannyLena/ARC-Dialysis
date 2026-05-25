@@ -1,0 +1,21 @@
+# Mac system files
+.DS_Store
+**/.DS_Store
+
+# Large video and audio files (not part of website)
+videos/
+audios/
+
+# Photoshop and Illustrator source files
+*.psd
+*.ai
+
+# Internal documents (not website files)
+docs/
+
+# Claude Code config and dev tools
+.claude/
+_skill-updates/
+
+# Error logs
+includes/error_log
