@@ -213,6 +213,25 @@ a:active  { color: #0022F0; text-decoration: none; }
   text-decoration: none;
 }
 .loc-card-phone a i { font-size: 0.9em; }
+.loc-card-hours {
+  font-size: 0.85em;
+  color: #1a5276;
+  background: #eaf2f8;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.loc-card-hours i { color: #0099a8; flex-shrink: 0; }
+.loc-card-hours .hours-note {
+  font-size: 0.88em;
+  color: #555;
+  font-weight: 400;
+}
 @media (max-width: 767px) {
   .loc-card { flex: 1 1 100%; max-width: 100%; }
 }
@@ -1204,6 +1223,10 @@ textarea:focus,
             </a>
           </p>
           <p class="loc-card-address">2601 SW 37th Ave Suite 138<br>Miami, FL 33133</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 5:00 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:3054486261"><i class="fa fa-phone" aria-hidden="true"></i>(305) 448-6261</a>
           </div>
@@ -1217,6 +1240,10 @@ textarea:focus,
             </a>
           </p>
           <p class="loc-card-address">955 NW 3rd Street Suite 110<br>Miami, FL 33128</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 5:00 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:3055453070"><i class="fa fa-phone" aria-hidden="true"></i>(305) 545-3070</a>
           </div>
@@ -1230,6 +1257,10 @@ textarea:focus,
             </a>
           </p>
           <p class="loc-card-address">11223 N. Williams St., Suite M<br>Dunnellon, FL 34432</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon, Wed &amp; Fri &nbsp;5:00 AM &ndash; 5:00 PM<br><span class="hours-note">Tue, Thu, Sat&ndash;Sun closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:3522801880"><i class="fa fa-phone" aria-hidden="true"></i>352-280-1880</a>
           </div>
@@ -1243,6 +1274,10 @@ textarea:focus,
             </a>
           </p>
           <p class="loc-card-address">1107 3rd St. SW Suite 9<br>Winter Haven, FL 33880</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 5:00 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:8632926089"><i class="fa fa-phone" aria-hidden="true"></i>(863) 292-6089</a>
           </div>
@@ -1252,6 +1287,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis North Dade<br>Opa Locka</p>
           <p class="loc-card-address">1986 Opa Locka Blvd<br>Opa Locka, FL 33054</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 5:00 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7863911733"><i class="fa fa-phone" aria-hidden="true"></i>(786) 391-1733</a>
           </div>
@@ -1279,6 +1318,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">The Kidney Institute<br>of Bonita Springs</p>
           <p class="loc-card-address">26381 S. Tamiami Trail #122<br>Bonita Springs, FL 34134</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon, Wed &amp; Fri &nbsp;5:00 AM &ndash; 5:00 PM<br><span class="hours-note">Tue, Thu, Sat&ndash;Sun closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:2393887770"><i class="fa fa-phone" aria-hidden="true"></i>(239) 388-7770</a>
           </div>
@@ -1288,6 +1331,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis Perrine<br>Miami</p>
           <p class="loc-card-address">22165 South Dixie Hwy<br>Miami, FL 33170</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 4:30 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7865043003"><i class="fa fa-phone" aria-hidden="true"></i>(786) 504-3003</a>
           </div>
@@ -1297,6 +1344,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis Kendall<br>Miami</p>
           <p class="loc-card-address">9835 Sunset Drive #107<br>Miami, FL 33173</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 5:00 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7863912160"><i class="fa fa-phone" aria-hidden="true"></i>(786) 391-2160</a>
           </div>
@@ -1306,6 +1357,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">Kidney Care Center<br>of LaBelle</p>
           <p class="loc-card-address">50 N Bridge Street Suite 200<br>LaBelle, FL 33935</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon, Wed &amp; Fri &nbsp;5:00 AM &ndash; 5:00 PM<br><span class="hours-note">Tue, Thu, Sat&ndash;Sun closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:8633397030"><i class="fa fa-phone" aria-hidden="true"></i>(863) 339-7030</a>
           </div>
@@ -1315,6 +1370,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis Hialeah<br>Hialeah</p>
           <p class="loc-card-address">3704 W 12th Ave<br>Hialeah, FL 33012</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 4:30 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7865024976"><i class="fa fa-phone" aria-hidden="true"></i>(786) 502-4976</a>
           </div>
@@ -1324,6 +1383,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis Miami Lakes<br>Miami Gardens</p>
           <p class="loc-card-address">5600 NW 167th Street<br>Miami Gardens, FL 33014</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 4:30 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7866612178"><i class="fa fa-phone" aria-hidden="true"></i>(786) 661-2178</a>
           </div>
@@ -1333,6 +1396,10 @@ textarea:focus,
         <div class="loc-card">
           <p class="loc-card-name">ARC Dialysis Pompano Beach<br>Lighthouse Point</p>
           <p class="loc-card-address">3116 N Federal Hwy<br>Lighthouse Point, FL 33064</p>
+          <div class="loc-card-hours">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Mon&ndash;Sat &nbsp;4:00 AM &ndash; 4:30 PM<br><span class="hours-note">Sunday closed</span>
+          </div>
           <div class="loc-card-phone">
             <a href="tel:7864579480"><i class="fa fa-phone" aria-hidden="true"></i>(786) 457-9480</a>
           </div>
